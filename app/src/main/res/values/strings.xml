@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Broker</string>
+    <string name="policy_number">Policy Number</string>
+    <string name="policy_details">Policy Details</string>
+    <string name="policy_no">Policy No</string>
+    <string name="status">Status</string>
+    <string name="cover_to">Cover To</string>
+    <string name="renewal_date">Renewal Date</string>
+    <string name="product">Product</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="risk_id">ID</string>
+    <string name="description">Desc</string>
+    <string name="sum_insured">Insured</string>
+    <string name="premium">Premium</string>
+    <string name="receipt">Receipt</string>
+    <string name="ammount">Amount</string>
+    <string name="date">Date</string>
+    <string name="ref_no">Ref No</string>
+    <string name="d_c">D/C</string>
+    <string name="claim">Claim</string>
+    <string name="lossdate">LossDate</string>
+    <string name="claimdate">ClaimDate</string>
+    <string name="peril">Peril</string>
+    <string name="no_claim">Zero Claims</string>
+    <string name="no_risks">Zero Risks</string>
+    <string name="no_receipts">No Receipts</string>
+    <string name="rensoft">RENSOFT</string>
+
+</resources>

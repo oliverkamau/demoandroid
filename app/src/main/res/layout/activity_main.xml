@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/myapp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1f1f1d"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    >
+
+
+    <View
+         android:id="@+id/first_line"
+        android:layout_width="20dp"
+        android:layout_height="50dp"
+        android:background="@drawable/white_line"
+        android:layout_centerHorizontal="true"/>
+    <View
+        android:id="@+id/second_line"
+        android:layout_width="20dp"
+        android:layout_height="100dp"
+        android:background="@drawable/red_line"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/first_line"/>
+    <View
+        android:id="@+id/third_line"
+        android:layout_width="20dp"
+        android:layout_height="250dp"
+        android:background="@drawable/white_line"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/second_line"/>
+    <View
+        android:id="@+id/fourth_line"
+        android:layout_width="20dp"
+        android:layout_height="200dp"
+        android:background="@drawable/red_line"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/third_line"/>
+    <View
+        android:id="@+id/fifth_line"
+        android:layout_width="20dp"
+        android:layout_height="220dp"
+        android:background="@drawable/green_line"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/fourth_line"/>
+    <View
+        android:id="@+id/sixth_line"
+        android:layout_width="20dp"
+        android:layout_height="150dp"
+        android:background="@drawable/white_line"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/fifth_line"/>
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/abril_fatface"
+            android:text="@string/rensoft"
+            android:textColor="@color/blowfish"
+
+            android:textSize="80sp" />
+
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <TextView
+            android:id="@+id/slogan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="cursive"
+            android:text="Your Insurance Solutions Patner"
+            android:textColor="@color/blowfish"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClaimsFragment"
+    android:padding="5dp">
+
+    <TableRow>
+        <TextView
+            android:text="@string/claim"
+            android:textSize="15sp"
+            android:width="80dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:text="@string/lossdate"
+            android:textSize="15sp"
+            android:width="100dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:text="@string/claimdate"
+            android:textSize="15sp"
+            android:width="100dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:text="@string/peril"
+            android:textSize="15sp"
+            android:width="80dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:text="@string/status"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            />
+    </TableRow>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/claim_recycler"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</TableLayout>

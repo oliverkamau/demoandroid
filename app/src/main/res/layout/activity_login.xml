@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:transitionName="logo_trans"
+        android:src="@drawable/matchrenlogo"/>
+
+<TextView
+    android:id="@+id/sign_in"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text=""
+    android:textStyle="italic"
+    android:textColor="@color/silver"
+    android:textSize="25sp"
+    android:layout_marginTop="50dp"
+    />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:cardCornerRadius="40dp"
+        app:cardBackgroundColor="#fff"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        tools:visibility="visible"
+        android:padding="10dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/LoginTextInputLayoutStyle"
+            app:boxCornerRadiusTopStart="5dp"
+            app:boxCornerRadiusTopEnd="5dp"
+            app:boxCornerRadiusBottomStart="5dp"
+            app:boxCornerRadiusBottomEnd="5dp"
+            android:id="@+id/usernameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            app:hintTextColor="#1F3FFA"
+            android:background="#fff"
+            app:hintEnabled="true"
+            app:startIconDrawable="@drawable/username_icon"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                >
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/LoginTextInputLayoutStyle"
+            app:boxCornerRadiusTopStart="5dp"
+            app:boxCornerRadiusTopEnd="5dp"
+            app:boxCornerRadiusBottomStart="5dp"
+            app:boxCornerRadiusBottomEnd="5dp"
+            android:id="@+id/passwordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            app:passwordToggleEnabled="true"
+            android:hint="Password"
+            app:hintTextColor="#1F3FFA"
+            app:hintEnabled="true"
+            android:background="#fff"
+            android:layout_marginTop="10dp"
+            app:startIconDrawable="@drawable/ic_baseline_lock_24"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                >
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:elevation="2dp"
+            android:text="FORGOT PASSWORD?"
+            android:textColor="@color/black"
+            android:background="#00000000"
+          />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/extended_fab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Sign In"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/teal_200"
+            />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Sign Up"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/silver"
+            />
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

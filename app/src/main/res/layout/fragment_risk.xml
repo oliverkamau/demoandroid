@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RiskFragment"
+    android:padding="5dp"
+    android:id="@+id/risk_frag">
+<TableRow>
+    <TextView
+        android:text="@string/risk_id"
+        android:textSize="15sp"
+        android:width="80dp"
+        android:textStyle="bold"
+ />
+    <TextView
+        android:text="@string/description"
+        android:textSize="15sp"
+        android:width="100dp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:text="@string/sum_insured"
+        android:textSize="15sp"
+        android:width="120dp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:text="@string/premium"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        />
+</TableRow>
+<androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/risk_recycler"
+    >
+
+</androidx.recyclerview.widget.RecyclerView>
+
+</TableLayout>

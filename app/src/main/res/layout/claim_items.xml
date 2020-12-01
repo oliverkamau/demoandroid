@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TableLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ClaimsFragment"
+        >
+
+        <TableRow>
+            <TextView
+                android:id="@+id/clmno"
+                android:textSize="12sp"
+                android:width="80dp"
+                />
+            <TextView
+                android:id="@+id/loss_date"
+                android:textSize="12sp"
+                android:width="100dp"
+                />
+            <TextView
+                android:id="@+id/claim_date"
+                android:textSize="12sp"
+                android:width="100dp"
+                />
+            <TextView
+                android:id="@+id/peril_val"
+                android:textSize="12sp"
+                android:width="80dp"
+                />
+            <TextView
+                android:id="@+id/status_val"
+                android:textSize="12sp"
+                />
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

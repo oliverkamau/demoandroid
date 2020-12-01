@@ -1,0 +1,35 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Broker" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="mytoast">
+        <item name="stTextBold">true</item>
+        <item name="stTextColor">#000</item>
+        <!--<item name="stFont">@font/retrofont</item>-->
+        <item name="stTextSize">20sp</item>
+        <item name="stColorBackground">#DC143C</item>
+        <item name="stSolidBackground">true</item>
+        <item name="stStrokeWidth">3dp</item>
+        <item name="stStrokeColor">#fff</item>
+        <item name="stIconStart">@drawable/ic_baseline_lock_24_trans</item>
+        <!--<item name="stIconEnd">@drawable/ic</item>-->
+        <item name="stLength">LONG</item> LONG or SHORT
+        <item name="stGravity">top</item> top or center
+        <item name="stRadius">5dp</item>
+    </style>
+    <style name="LoginTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">#1F3FFA</item>
+        <item name="boxStrokeWidth">2dp</item>
+    </style>
+</resources>
