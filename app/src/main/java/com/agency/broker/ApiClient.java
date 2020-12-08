@@ -19,7 +19,7 @@ public class ApiClient {
                 .build();
         return new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("https://3e5a88cd97a2.ngrok.io/")
+                .baseUrl("http://192.168.43.145:8082/")
                 .client(client)
                 .build();
     }
@@ -36,4 +36,9 @@ public class ApiClient {
         return getRetrofit().create(PolicyService.class);
 
     }
+    public static PolicyService getQuotes(){
+        return getRetrofit().create(PolicyService.class);
+
+    }
+
 }

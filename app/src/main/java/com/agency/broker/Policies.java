@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,7 +34,9 @@ public class Policies extends AppCompatActivity {
 
     private void setRecyclerView() {
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager l=new LinearLayoutManager(this);
+        l.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(l);
         adapter = new PolicyAdapter(this, getList(), new PolicyAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(PolicyBean item) {
@@ -45,7 +49,9 @@ public class Policies extends AppCompatActivity {
 
     private void setMyRecyclerView(List<PolicyBean> beans) {
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager l=new LinearLayoutManager(this);
+        l.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(l);
         adapter = new PolicyAdapter(this, beans, new PolicyAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(PolicyBean item) {

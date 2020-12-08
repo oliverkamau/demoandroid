@@ -12,6 +12,8 @@ public interface PolicyService {
 
     @GET("policies/{code}")
     Call<List<PolicyBean>> policyBean(@Header("Authorization") String header,@Path("code") Long code);
+    @GET("myquotes/{code}")
+    Call<List<QuotesBean>> quotesBean(@Header("Authorization") String header,@Path("code") Long code);
     @GET("risks/{code}")
     Call<List<RiskBean>> riskBean(@Header("Authorization") String header,@Path("code") Long code);
     @GET("receipts/{code}")
@@ -20,4 +22,8 @@ public interface PolicyService {
     Call<List<ClaimsBean>> claimsBean(@Header("Authorization") String header,@Path("code") Long code);
     @GET("policy/{code}")
     Call<PolicyDetailsBean> policyDetailsBean(@Header("Authorization") String header,@Path("code") Long code);
+    @GET("quotedetails/{code}")
+    Call<QuoteDetailsBean> quoteDetailsBean(@Header("Authorization") String header,@Path("code") Long code);
+    @GET("quoterisks/{code}")
+    Call<List<RiskBean>> quoterisks(@Header("Authorization") String header,@Path("code") Long code);
 }

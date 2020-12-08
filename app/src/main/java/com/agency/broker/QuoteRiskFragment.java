@@ -18,29 +18,28 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class ReceiptFragment extends Fragment {
+public class QuoteRiskFragment extends Fragment {
+
 
     RecyclerView recyclerView;
-    ReceiptAdapter adapter;
+    RiskAdapter adapter;
     View v;
-    List<ReceiptBean> receiptBeans;
+    List<RiskBean> riskBeans;
 
+    private static final String ARG_PARAM1 = "quote";
+    private static final String ARG_PARAM2 = "token";
 
-    private static final String ARG_PARAM1 = "token";
-    private static final String ARG_PARAM2 = "policy";
-
-    private Long policy;
+    private Long quote;
     private String token;
 
-    public ReceiptFragment() {
-
+    public QuoteRiskFragment() {
     }
 
 
-    public static ReceiptFragment newInstance(Long policy, String token) {
-        ReceiptFragment fragment = new ReceiptFragment();
+    public static QuoteRiskFragment newInstance(Long quote, String token) {
+        QuoteRiskFragment fragment = new QuoteRiskFragment();
         Bundle args = new Bundle();
-        args.putLong(ARG_PARAM1, policy);
+        args.putLong(ARG_PARAM1, quote);
         args.putString(ARG_PARAM2, token);
         fragment.setArguments(args);
         return fragment;
@@ -50,7 +49,7 @@ public class ReceiptFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            policy = getArguments().getLong(ARG_PARAM1);
+            quote = getArguments().getLong(ARG_PARAM1);
             token = getArguments().getString(ARG_PARAM2);
         }
     }
@@ -58,55 +57,50 @@ public class ReceiptFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View v= inflater.inflate(R.layout.fragment_receipt, container, false);
-        recyclerView= v.findViewById(R.id.receipt_recycler);
-        setRecyclerView(policy,token);
-        return v;
 
+        View v= inflater.inflate(R.layout.fragment_quote_risk, container, false);
+        recyclerView= v.findViewById(R.id.quote_risk_recycler);
+        setRecyclerView(quote,token);
+        return v;
     }
 
-    private void setRecyclerView(Long policy, String token) {
+    private void setRecyclerView(Long quoteId,String token) {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new ReceiptAdapter(getContext(), getList(policy,token));
+        adapter = new RiskAdapter(getContext(), getList(quoteId,token));
         recyclerView.setAdapter(adapter);
     }
 
-    private List<ReceiptBean> getList(Long policy, String token) {
+    private List<RiskBean> getList(Long quoteId,String token) {
+        riskBeans = new ArrayList<>();
 
-        receiptBeans = new ArrayList<>();
-
-        Call<List<ReceiptBean>> loginResponseCall = ApiClient.getPolicyService()
-                .receiptBean(token, policy);
-        loginResponseCall.enqueue(new Callback<List<ReceiptBean>>() {
+        Call<List<RiskBean>> loginResponseCall = ApiClient.getPolicyService()
+                .quoterisks(token, quoteId);
+        loginResponseCall.enqueue(new Callback<List<RiskBean>>() {
             @Override
-            public void onResponse(Call<List<ReceiptBean>> call, Response<List<ReceiptBean>> response) {
+            public void onResponse(Call<List<RiskBean>> call, Response<List<RiskBean>> response) {
                 if (response.isSuccessful()) {
                     if (response.body() != null || !response.body().isEmpty()) {
-                        receiptBeans.addAll(response.body());
-                        setMyRecyclerView(receiptBeans);
+                        riskBeans.addAll(response.body());
+                        setMyRecyclerView(riskBeans);
                         //Toast.makeText(Policies.this, policyBeans.get(1).getPolicyNo(),Toast.LENGTH_LONG).show();
                     }
                 }
             }
 
             @Override
-            public void onFailure(Call<List<ReceiptBean>> call, Throwable t) {
+            public void onFailure(Call<List<RiskBean>> call, Throwable t) {
                 System.out.println("Error "+t.getLocalizedMessage());
             }
         });
 
-        return receiptBeans;
-
+        return riskBeans;
     }
 
-    private void setMyRecyclerView(List<ReceiptBean> receiptBeans) {
-
+    private void setMyRecyclerView(List<RiskBean> riskBeanList) {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new ReceiptAdapter(getContext(), receiptBeans);
+        adapter = new RiskAdapter(getContext(), riskBeanList);
         recyclerView.setAdapter(adapter);
-
     }
 }

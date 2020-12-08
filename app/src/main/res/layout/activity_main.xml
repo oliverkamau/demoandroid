@@ -71,7 +71,7 @@
             android:text="@string/rensoft"
             android:textColor="@color/blowfish"
 
-            android:textSize="80sp" />
+            android:textSize="60sp" />
 
 
     </RelativeLayout>
@@ -92,7 +92,7 @@
             android:fontFamily="cursive"
             android:text="Your Insurance Solutions Patner"
             android:textColor="@color/blowfish"
-            android:textSize="30sp" />
+            android:textSize="20sp" />
 
     </RelativeLayout>
     </LinearLayout>

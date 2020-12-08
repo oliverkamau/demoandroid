@@ -61,7 +61,12 @@ public class Login extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            startActivity(new Intent(Login.this,Home.class).putExtra("name",response.body().getRealName()));
+                            Intent i=new Intent(Login.this,Home.class);
+                            i.putExtra("name",response.body().getRealName());
+                            i.putExtra("policies",response.body().getPolicies().toString());
+                            i.putExtra("quotes",response.body().getQuotes().toString());
+                            i.putExtra("expired",response.body().getExpired().toString());
+                            startActivity(i);
                         }
                     },1000);
 

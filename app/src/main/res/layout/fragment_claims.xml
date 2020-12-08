@@ -1,4 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <LinearLayout
+        android:id="@+id/claimsheader"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="@color/gray"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/claim"
+            android:textSize="15sp"
+            android:width="70dp"
+            android:textStyle="bold"
+            android:textColor="@color/ghostWhite"            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lossdate"
+            android:textSize="15sp"
+            android:width="80dp"
+            android:textStyle="bold"
+            android:textColor="@color/ghostWhite"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/claimdate"
+            android:textSize="15sp"
+            android:width="80dp"
+            android:textStyle="bold"
+            android:textColor="@color/ghostWhite"            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/peril"
+            android:textSize="15sp"
+            android:width="60dp"
+            android:textStyle="bold"
+            android:textColor="@color/ghostWhite"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/status"
+            android:textSize="15sp"
+            android:width="60dp"
+            android:textStyle="bold"
+            android:textColor="@color/ghostWhite"
+            />
+
+
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/claimsheader"
+        android:id="@+id/claim_recycler"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+</RelativeLayout>
+<!--
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -46,3 +118,4 @@
     </androidx.recyclerview.widget.RecyclerView>
 
 </TableLayout>
+-->

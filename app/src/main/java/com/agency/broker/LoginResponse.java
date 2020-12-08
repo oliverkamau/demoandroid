@@ -16,6 +16,36 @@ public class LoginResponse {
 
     private String realName;
 
+    private Integer expired;
+
+    private Integer policies;
+
+    private Integer quotes;
+
+    public Integer getExpired() {
+        return expired;
+    }
+
+    public void setExpired(Integer expired) {
+        this.expired = expired;
+    }
+
+    public Integer getPolicies() {
+        return policies;
+    }
+
+    public void setPolicies(Integer policies) {
+        this.policies = policies;
+    }
+
+    public Integer getQuotes() {
+        return quotes;
+    }
+
+    public void setQuotes(Integer quotes) {
+        this.quotes = quotes;
+    }
+
     public String getJwt() {
         return jwt;
     }

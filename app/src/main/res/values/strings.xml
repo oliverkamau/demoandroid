@@ -26,5 +26,12 @@
     <string name="no_risks">Zero Risks</string>
     <string name="no_receipts">No Receipts</string>
     <string name="rensoft">RENSOFT</string>
+    <string name="quote_no">Quote No</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="renewal">Renewal</string>
+    <string name="balance">Balance</string>
+    <string name="motor_insurance">Motor Insurance</string>
+    <string name="expiry">Expiry</string>
 
 </resources>

@@ -1,10 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-   >
 
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/whiteSmoke"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        >
+
+    <TextView
+        android:id="@+id/prod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="115dp"
+        android:text="@string/policy_no"
+        android:fontFamily="@font/adamina"
+        android:textColor="@color/black"
+        android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/polNo"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/policy_no"
+            android:textSize="12sp"
+            android:width="160dp"
+            android:fontFamily="@font/adamina"
+
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/status"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/status"
+            android:textSize="12sp"
+            android:fontFamily="@font/adamina"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+
+<!--
     <TableRow
         android:layout_marginTop="40dp"
         android:id="@+id/recycledrow"
@@ -30,5 +68,4 @@
             />
 
     </TableRow>
-
-</TableLayout>
+-->
