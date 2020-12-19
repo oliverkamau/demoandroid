@@ -29,8 +29,9 @@
       <!--  <item name="stGravity">0</item> top or center-->
         <item name="stRadius">5dp</item>
     </style>
-    <style name="LoginTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+  <!--  <style name="LoginTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout">
         <item name="boxStrokeColor">#1F3FFA</item>
         <item name="boxStrokeWidth">2dp</item>
     </style>
+    -->
 </resources>

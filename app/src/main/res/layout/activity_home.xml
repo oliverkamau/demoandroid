@@ -5,46 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_weight="1"
-    android:background="@color/teal"
+    android:background="@color/ghostWhite"
     tools:context=".Home">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/background_home"
+        android:layout_margin="10dp"
+        android:background="@color/azure"
         >
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/alicehome"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="10dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardElevation="10dp"
+    app:strokeWidth="5dp"
+    app:strokeColor="@color/aliceBlue"
+    android:padding="10dp"
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Policies"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/ghostWhite"
-        android:textSize="15sp"
-        android:fontFamily="@font/berkshire_swash"
-        />
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp">
         <TextView
-            android:id="@+id/expired"
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Expired"
-            android:layout_marginStart="75dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/ghostWhite"
-            android:textSize="15sp"
-            android:fontFamily="@font/berkshire_swash"
-            />
-        <TextView
-            android:id="@+id/quotes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Quotes"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/ghostWhite"
+            android:text="Policies"
+
+            android:textColor="@color/teal"
             android:textSize="15sp"
             android:fontFamily="@font/berkshire_swash"
             />
@@ -52,62 +48,132 @@
             android:id="@+id/total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:padding="5dp"
             android:fontFamily="@font/abril_fatface"
             android:text="5"
-            android:textColor="@color/ghostWhite"
+            android:textColor="@color/teal"
             android:textSize="25sp" />
-        <TextView
-            android:id="@+id/expiredpol"
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialquote"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/expired"
             android:layout_marginStart="75dp"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/abril_fatface"
-            android:text="5"
-            android:textColor="@color/ghostWhite"
-            android:textSize="25sp" />
-        <TextView
-            android:id="@+id/quotesval"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardElevation="10dp"
+            app:strokeWidth="5dp"
+            app:strokeColor="@color/aliceBlue"
+            android:padding="10dp"
+
+            >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/expired"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expired"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp"
+                android:fontFamily="@font/berkshire_swash"
+                />
+
+            <TextView
+                android:id="@+id/expiredpol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:fontFamily="@font/abril_fatface"
+                android:text="5"
+                android:textColor="@color/colorAccent"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/quotes"
             android:layout_marginStart="140dp"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/abril_fatface"
-            android:text="5"
-            android:textColor="@color/ghostWhite"
-            android:textSize="25sp" />
+            android:clickable="true"
+            android:focusable="true"
+            app:cardElevation="10dp"
+            app:strokeWidth="5dp"
+            app:strokeColor="@color/aliceBlue"
+            android:padding="20dp"
 
-        <TextView
-            android:id="@+id/userrealname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/quotesval"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/textView"
-            android:fontFamily="@font/abril_fatface"
-            android:text="NAME"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
+            >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp">
+            <TextView
+                android:id="@+id/quotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quotes"
+                android:textColor="@color/teal"
+                android:textSize="15sp"
+                android:fontFamily="@font/berkshire_swash"
+                />
+
+
+
+
+
+            <TextView
+                android:id="@+id/quotesval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:fontFamily="@font/abril_fatface"
+                android:text="5"
+                android:textColor="@color/teal"
+                android:textSize="25sp" />
+        </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    <ImageView
+
+        android:id="@+id/khanname"
+        android:layout_height="100dp"
+        android:layout_width="match_parent"
+        android:src="@drawable/welcome"
+        android:layout_below="@id/alicehome"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+  />
+
+
+
+
+
 
 
         <GridLayout
             android:layout_width="match_parent"
-            android:layout_height="600dp"
-            android:layout_below="@id/userrealname"
+            android:layout_height="700dp"
+            android:layout_below="@id/khanname"
             android:layout_marginTop="20dp"
             android:columnCount="2"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:rowCount="3"
-            android:background="@drawable/background_home"
-           >
+            >
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/policycard"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
@@ -116,10 +182,12 @@
                 android:layout_rowWeight="1"
                 android:layout_row="0"
                 android:layout_column="0"
-                app:cardCornerRadius="15dp"
-                android:elevation="10dp"
-                app:cardUseCompatPadding="true"
-
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="10dp"
+                app:strokeWidth="10dp"
+                app:strokeColor="@color/azure"
+                 android:layout_margin="5dp"
                 >
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -139,7 +207,8 @@
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0" />
+                        app:layout_constraintVertical_bias="1.0"
+                        android:backgroundTint="@color/mintCream"/>
 
                     <TextView
                         android:id="@+id/textView2"
@@ -150,13 +219,13 @@
                         android:layout_marginBottom="1dp"
                         android:text="My Policies"
                         android:textSize="15dp"
-                        android:textColor="@color/colorAccent"
+                        android:textColor="@color/purple_700"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/quotescard"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
@@ -165,9 +234,12 @@
                 android:layout_rowWeight="1"
                 android:layout_row="0"
                 android:layout_column="1"
-                app:cardCornerRadius="15dp"
-                android:elevation="10dp"
-                app:cardUseCompatPadding="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="10dp"
+                app:strokeWidth="10dp"
+                app:strokeColor="@color/azure"
+                android:layout_margin="5dp"
 
                 >
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -186,7 +258,8 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:backgroundTint="@color/mintCream"/>
 
                     <TextView
                         android:id="@+id/textView3"
@@ -197,14 +270,13 @@
                         android:layout_marginBottom="1dp"
                         android:text="My Quotes"
                         android:textSize="15dp"
-                        android:textColor="@color/colorAccent"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textColor="@color/purple_700"                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/covers"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
@@ -213,9 +285,12 @@
                 android:layout_rowWeight="1"
                 android:layout_row="1"
                 android:layout_column="0"
-                app:cardCornerRadius="15dp"
-                android:elevation="10dp"
-                app:cardUseCompatPadding="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="10dp"
+                app:strokeWidth="10dp"
+                app:strokeColor="@color/azure"
+                android:layout_margin="5dp"
 
                 >
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -233,7 +308,10 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:backgroundTint="@color/mintCream"
+
+                        />
 
                     <TextView
                         android:id="@+id/textView4"
@@ -244,13 +322,12 @@
                         android:layout_marginBottom="1dp"
                         android:text="Products"
                         android:textSize="15dp"
-                        android:textColor="@color/colorAccent"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textColor="@color/purple_700"                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:layout_gravity="fill"
@@ -258,9 +335,12 @@
                 android:layout_rowWeight="1"
                 android:layout_row="1"
                 android:layout_column="1"
-                app:cardCornerRadius="15dp"
-                android:elevation="10dp"
-                app:cardUseCompatPadding="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="10dp"
+                app:strokeWidth="10dp"
+                app:strokeColor="@color/azure"
+                android:layout_margin="5dp"
 
                 >
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -281,7 +361,8 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:backgroundTint="@color/mintCream"/>
 
                     <TextView
                         android:id="@+id/textView5"
@@ -292,14 +373,14 @@
                         android:layout_marginBottom="1dp"
                         android:text="My Payments"
                         android:textSize="15dp"
-                        android:textColor="@color/colorAccent"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textColor="@color/purple_700"                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/serv"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:layout_gravity="fill"
@@ -307,9 +388,12 @@
                 android:layout_rowWeight="1"
                 android:layout_row="2"
                 android:layout_column="0"
-                app:cardCornerRadius="15dp"
-                android:elevation="10dp"
-                app:cardUseCompatPadding="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="10dp"
+                app:strokeWidth="10dp"
+                app:strokeColor="@color/azure"
+                android:layout_margin="5dp"
 
                 >
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -329,7 +413,8 @@
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0" />
+                        app:layout_constraintVertical_bias="1.0"
+                        android:backgroundTint="@color/mintCream"/>
 
                     <TextView
                         android:id="@+id/textView7"
@@ -340,13 +425,12 @@
                         android:layout_marginBottom="1dp"
                         android:text="Certificates"
                         android:textSize="15dp"
-                        android:textColor="@color/colorAccent"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textColor="@color/purple_700"                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imageView7" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:layout_gravity="fill"
@@ -354,9 +438,12 @@
                 android:layout_rowWeight="1"
                 android:layout_row="2"
                 android:layout_column="1"
-                app:cardCornerRadius="15dp"
-                android:elevation="10dp"
-                app:cardUseCompatPadding="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="10dp"
+                app:strokeWidth="10dp"
+                app:strokeColor="@color/azure"
+                android:layout_margin="5dp"
 
                 >
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -376,7 +463,8 @@
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0" />
+                        app:layout_constraintVertical_bias="1.0"
+                        android:backgroundTint="@color/mintCream"/>
 
                     <TextView
                         android:id="@+id/textView9"
@@ -387,19 +475,18 @@
                         android:layout_marginBottom="1dp"
                         android:text="Contact Us"
                         android:textSize="15dp"
-                        android:textColor="@color/colorAccent"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textColor="@color/purple_700"                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imageView9" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
         </GridLayout>
     </RelativeLayout>
     <!--
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    
+
     >
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -759,3 +846,4 @@
 
 -->
 </androidx.core.widget.NestedScrollView>
+

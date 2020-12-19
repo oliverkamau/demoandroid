@@ -26,4 +26,10 @@ public interface PolicyService {
     Call<QuoteDetailsBean> quoteDetailsBean(@Header("Authorization") String header,@Path("code") Long code);
     @GET("quoterisks/{code}")
     Call<List<RiskBean>> quoterisks(@Header("Authorization") String header,@Path("code") Long code);
+    @GET("selfquotes")
+    Call<List<SelfQuoteBean>> selfqouotes(@Header("Authorization") String header);
+    @GET("countQuotes")
+    Call<QuoteCount> countQuotes(@Header("Authorization") String header);
+    @GET("selfquotedetails/{code}")
+    Call<List<SelfQuoteDetailsBean>> selfquotedetails(@Header("Authorization") String header,@Path("code") Long code);
 }

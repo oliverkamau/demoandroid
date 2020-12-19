@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MotorInsurance">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/azure"
+        >
+<LinearLayout
+    android:id="@+id/linearmotor"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/userfriend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/amarante"
+        android:drawableLeft="@drawable/ic_baseline_emoji_people_24"
+        android:text="Hello There!"
+        android:textColor="@color/teal"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/userfriend1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/amarante"
+        android:text="Below are our various motor products lets get started,"
+        android:textColor="@color/teal"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/userfriend2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/amarante"
+        android:text="proceed to select the type of vehicle you want insured"
+        android:textColor="@color/teal"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/userfriend3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/amarante"
+        android:text="We got you covered in a click!"
+        android:textColor="@color/teal"
+        android:textSize="15sp" />
+</LinearLayout>
+
+
+
+
+
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:layout_below="@id/linearmotor"
+            android:layout_marginTop="20dp"
+            android:columnCount="2"
+            android:layout_margin="20dp"
+            android:rowCount="3"
+            >
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/motorprivatecard"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="10dp"
+                app:strokeWidth="10dp"
+                app:strokeColor="@color/azure"
+                android:layout_margin="5dp"
+
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="50dp"
+                        android:src="@drawable/motorprivatelogo"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:text="Motor Private"
+                        android:textSize="15dp"
+                        android:textColor="@color/colorAccent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/quotescard"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="10dp"
+                app:strokeWidth="10dp"
+                app:strokeColor="@color/azure"
+                android:layout_margin="5dp"
+
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="50dp"
+                        android:src="@drawable/taxiuber"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:text="Taxi Insurance"
+                        android:textSize="15dp"
+                        android:textColor="@color/colorAccent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/covers"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="10dp"
+                app:strokeWidth="10dp"
+                app:strokeColor="@color/azure"
+                android:layout_margin="5dp"
+
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="50dp"
+                        android:src="@drawable/psvmotor"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:text="PSV Insurance"
+                        android:textSize="15dp"
+                        android:textColor="@color/colorAccent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="10dp"
+                app:strokeWidth="10dp"
+                app:strokeColor="@color/azure"
+                android:layout_margin="5dp"
+
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="50dp"
+                        android:src="@drawable/chaufferd"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:text="Chauffer Driven"
+                        android:textSize="15dp"
+                        android:textColor="@color/colorAccent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="10dp"
+                app:strokeWidth="10dp"
+                app:strokeColor="@color/azure"
+                android:layout_margin="5dp"
+
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="50dp"
+                        android:src="@drawable/truckins"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:text="Truck Insurance"
+                        android:textSize="15dp"
+                        android:textColor="@color/colorAccent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="2"
+                android:layout_column="1"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="10dp"
+                app:strokeWidth="10dp"
+                app:strokeColor="@color/azure"
+                android:layout_margin="5dp"
+
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="50dp"
+                        android:src="@drawable/tractors"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:text="Motor Special"
+                        android:textSize="15dp"
+                        android:textColor="@color/colorAccent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </GridLayout>
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

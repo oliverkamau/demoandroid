@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+
+    >
+<!--
+    <TextView
+        android:id="@+id/coverval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="115dp"
+        android:text=""
+        android:fontFamily="@font/adamina"
+        android:textColor="@color/black"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/nameval"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text=""
+        android:textSize="12sp"
+        android:width="160dp"
+        android:fontFamily="@font/adamina"
+
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/premiumval"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text=""
+        android:textSize="12sp"
+        android:fontFamily="@font/adamina"
+        android:textColor="@color/black"/>
+-->
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:clickable="false"
+        android:focusable="true"
+        app:cardElevation="10dp"
+        app:strokeWidth="5dp"
+        app:strokeColor="@color/aliceBlue"
+        >
+<LinearLayout
+    android:id="@+id/parentlinear"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    >
+    <GridLayout
+        android:id="@+id/originalgrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="3"
+
+
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_row="0">
+            <TextView
+                android:id="@+id/mtprivate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/blowfish"
+                android:text="PRIVATE"
+                android:textSize="16sp"
+                android:fontFamily="@font/adamina"
+                />
+            <TextView
+                android:id="@+id/myunderwriter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Britam Insurance"
+                android:textSize="14sp"
+
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_row="0">
+            <TextView
+                android:id="@+id/mysuminsured"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/silver"
+                android:text="Sum Insured"
+                android:textSize="14sp"
+                android:fontFamily="@font/adamina"
+                />
+            <TextView
+                android:id="@+id/mysumval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="1,200,000"
+                android:textSize="14sp"
+
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_row="1">
+            <TextView
+                android:id="@+id/cov"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/silver"
+                android:text="Cover"
+                android:textSize="14sp"
+                android:fontFamily="@font/adamina"
+                />
+            <TextView
+                android:id="@+id/mycoverval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Comprehensive"
+                android:textSize="14sp"
+
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_row="1">
+            <TextView
+                android:id="@+id/mypremium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/silver"
+                android:text="Premium"
+                android:textSize="14sp"
+                android:fontFamily="@font/adamina"
+                />
+            <LinearLayout
+                android:id="@+id/iconlinear"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="-8dp">
+                <TextView
+                    android:id="@+id/mypremval"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blowfish"
+                    android:text="11,600 Ksh"
+                    android:textSize="16sp"
+
+                    />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/moreitems"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/more"
+                    android:backgroundTint="#fff"
+                    app:iconSize="30dp"
+                    app:iconTint="@color/blowfish"
+                    android:layout_marginStart="40dp"
+                    android:stateListAnimator="@null"
+                    android:clickable="true"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <!--
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_margin="5dp"
+              android:layout_columnWeight="1"
+              android:layout_rowWeight="1"
+              android:layout_column="0"
+              android:layout_row="2"
+              >
+              <Button
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Proportion"
+                  />
+          </LinearLayout>
+          -->
+
+    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/mynewLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <!--
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Add Ons"
+            android:textColor="@color/black"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Consider the following Add Ons that may be cover you better at an extra fee"
+            android:textColor="@color/black"
+            android:textSize="14sp"/>
+              -->
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/mymotherGrid"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        >
+
+     <!--
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_columnWeight="1"
+    android:layout_rowWeight="1"
+    android:layout_row="0"
+    android:layout_column="0"
+    android:text="200ksh"
+    android:padding="5dp"
+    android:backgroundTint="@color/whiteSmoke"
+    android:textColor="@color/black"
+    />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:text="300Ksh"
+            android:padding="5dp"
+            android:backgroundTint="@color/whiteSmoke"
+            android:textColor="@color/black"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:text="400ksh"
+            android:padding="5dp"
+            android:backgroundTint="@color/whiteSmoke"
+            android:textColor="@color/black"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:text="500ksh"
+            android:padding="5dp"
+            android:backgroundTint="@color/whiteSmoke"
+            android:textColor="@color/black"
+            />
+            -->
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

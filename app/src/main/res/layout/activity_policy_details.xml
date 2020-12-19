@@ -5,18 +5,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PolicyDetails">
+    tools:context=".PolicyDetails"
+    >
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/policycard"
         android:layout_height="300dp"
         android:layout_width="match_parent"
         android:layout_gravity="fill"
         android:padding="10dp"
-        app:cardCornerRadius="15dp"
-        android:elevation="10dp"
-        app:cardUseCompatPadding="true"
-        android:backgroundTint="@color/gray">
+        android:clickable="true"
+        android:focusable="true"
+        app:cardElevation="10dp"
+        app:strokeWidth="10dp"
+        android:layout_margin="10dp"
+        app:strokeColor="@color/aliceBlue">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,7 +43,7 @@
                     android:width="80dp"
                     android:fontFamily="@font/adamina"
                     android:text="@string/product"
-                    android:textColor="@color/ghostWhite"
+                    android:textColor="@color/black"
                     android:textSize="15sp"
                     />
 
@@ -52,7 +55,7 @@
 
                     android:layout_gravity="fill"
                     android:text=""
-                    android:textColor="@color/ghostWhite"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/adamina"
                     android:textSize="15sp"
                     />
@@ -73,7 +76,7 @@
                     android:width="80dp"
                     android:fontFamily="@font/adamina"
                     android:text="@string/policy_no"
-                    android:textColor="@color/ghostWhite"
+                    android:textColor="@color/black"
                     android:textSize="15sp"
                     />
 
@@ -85,7 +88,7 @@
 
                     android:layout_gravity="fill"
                     android:text=""
-                    android:textColor="@color/ghostWhite"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/adamina"
                     android:textSize="15sp"
                     />
@@ -106,7 +109,7 @@
                     android:width="80dp"
                     android:fontFamily="@font/adamina"
                     android:text="@string/status"
-                    android:textColor="@color/ghostWhite"
+                    android:textColor="@color/black"
                     android:textSize="15sp"
                     />
 
@@ -118,7 +121,7 @@
 
                     android:layout_gravity="fill"
                     android:text=""
-                    android:textColor="@color/ghostWhite"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/adamina"
                     android:textSize="15sp"
                     />
@@ -139,7 +142,7 @@
                     android:width="80dp"
                     android:fontFamily="@font/adamina"
                     android:text="@string/from"
-                    android:textColor="@color/ghostWhite"
+                    android:textColor="@color/black"
                     android:textSize="15sp"
                     />
 
@@ -151,7 +154,7 @@
 
                     android:layout_gravity="fill"
                     android:text=""
-                    android:textColor="@color/ghostWhite"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/adamina"
                     android:textSize="15sp"
                     />
@@ -172,7 +175,7 @@
                     android:width="80dp"
                     android:fontFamily="@font/adamina"
                     android:text="@string/to"
-                    android:textColor="@color/ghostWhite"
+                    android:textColor="@color/black"
                     android:textSize="15sp"
                     />
 
@@ -184,7 +187,7 @@
 
                     android:layout_gravity="fill"
                     android:text=""
-                    android:textColor="@color/ghostWhite"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/adamina"
                     android:textSize="15sp"
                     />
@@ -205,7 +208,7 @@
                     android:width="80dp"
                     android:fontFamily="@font/adamina"
                     android:text="@string/renewal"
-                    android:textColor="@color/ghostWhite"
+                    android:textColor="@color/black"
                     android:textSize="15sp"
                     />
 
@@ -217,7 +220,7 @@
 
                     android:layout_gravity="fill"
                     android:text=""
-                    android:textColor="@color/ghostWhite"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/adamina"
                     android:textSize="15sp"
                     />
@@ -238,7 +241,7 @@
                     android:width="80dp"
                     android:fontFamily="@font/adamina"
                     android:text="@string/balance"
-                    android:textColor="@color/ghostWhite"
+                    android:textColor="@color/black"
                     android:textSize="15sp"
                     />
 
@@ -250,7 +253,7 @@
 
                     android:layout_gravity="fill"
                     android:text=""
-                    android:textColor="@color/ghostWhite"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/adamina"
                     android:textSize="15sp"
                     />
@@ -469,7 +472,7 @@
 
 
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
     <LinearLayout
         android:layout_width="match_parent"

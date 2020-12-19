@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login"
+    android:background="@color/azure"
+    >
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+
+        android:padding="10dp"
+        >
+
+
+
+        <TextView
+            android:id="@+id/textassure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This will only take a few seconds"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginLeft="40dp"
+            android:drawableStart="@drawable/ic_baseline_thumb_up_24"
+            android:layout_marginTop="50dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            tools:visibility="visible"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/prompt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WHAT IS YOUR VEHICLE REGISTRATION NUMBER?"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginTop="20dp"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/LoginTextInputLayoutStyle"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusBottomEnd="5dp"
+                android:id="@+id/regnumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="KCP 096Y"
+                app:hintTextColor="#1F3FFA"
+                android:background="@color/honeyDew"
+                app:hintEnabled="false"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/registration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="KCP 046Y"
+                    >
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/make"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WHAT IS THE MAKE AND MODEL OF YOUR CAR?"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginTop="20dp"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/LoginTextInputLayoutStyle"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusBottomEnd="5dp"
+                android:id="@+id/model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="TOYOTA, NISSAN"
+                app:hintTextColor="#1F3FFA"
+                android:background="@color/honeyDew"
+                app:hintEnabled="false"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/makemodel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="NISSAN, TOYOTA"
+                    >
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/engcap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WHAT IS THE ENGINE CAPACITY OF YOUR CAR?"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginTop="20dp"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/LoginTextInputLayoutStyle"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusBottomEnd="5dp"
+                android:id="@+id/engine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=""
+                app:hintTextColor="#1F3FFA"
+                android:background="@color/honeyDew"
+                app:hintEnabled="false"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/enginecapacity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="2200CC"
+                    >
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/manyear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WHAT IS THE YEAR OF MANUFACTURE?"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginTop="20dp"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/LoginTextInputLayoutStyle"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusBottomEnd="5dp"
+                android:id="@+id/manufacture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=""
+                app:hintTextColor="#1F3FFA"
+                android:background="@color/honeyDew"
+                app:hintEnabled="false"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/manufactureyear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="2019"
+                    >
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/marketval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WHAT IS THE CURRENT MARKET VALUE OF YOUR CAR?"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginTop="20dp"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/LoginTextInputLayoutStyle"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusBottomEnd="5dp"
+                android:id="@+id/market"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=""
+                app:hintTextColor="#1F3FFA"
+                android:background="@color/honeyDew"
+                app:hintEnabled="false"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/marketvalue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="1,200,000"
+                    >
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/coverfrom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WHAT DO YOU WISH TO COMMENCE YOUR COVER?"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginTop="20dp"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/LoginTextInputLayoutStyle"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusBottomEnd="5dp"
+                android:id="@+id/yearfrom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=""
+                app:hintTextColor="#1F3FFA"
+                android:background="@color/honeyDew"
+                app:hintEnabled="false"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fromyear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="27/01/2021"
+                    >
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/covlength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FOR HOW MANY MONTHS DO YOU WISH TO BE COVERED?"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginTop="20dp"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/LoginTextInputLayoutStyle"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusBottomEnd="5dp"
+                android:id="@+id/lengthcover"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=""
+                app:hintTextColor="#1F3FFA"
+                android:background="@color/honeyDew"
+                app:hintEnabled="false"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/coverlength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="3"
+                    >
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/getquote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Generate Quote"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/teal"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

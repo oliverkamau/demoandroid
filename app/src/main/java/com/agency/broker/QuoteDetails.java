@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +28,9 @@ public class QuoteDetails extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_quote_details);
         Intent intent=getIntent();
         long quoteId=0L;
@@ -68,9 +71,9 @@ public class QuoteDetails extends AppCompatActivity {
                         t1.setText(response.body().getQuoteNo());
                         t2=findViewById(R.id.statusValue);
                         t2.setText(response.body().getStatus());
-                        t3=findViewById(R.id.quoteFrom);
+                        t3=findViewById(R.id.fromValue);
                         t3.setText(response.body().getCoverFrom());
-                        t4=findViewById(R.id.quoteTo);
+                        t4=findViewById(R.id.quoteToValue);
                         t4.setText(response.body().getCoverTo());
                         t5=findViewById(R.id.quoteExpiryValue);
                         t5.setText(response.body().getExpiry());

@@ -12,7 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Broker"
         android:usesCleartextTraffic="true">
-        <activity android:name=".QuoteDetails"></activity>
+        <activity android:name=".SelfQuoteDetails"></activity>
+        <activity android:name=".SelfQuote" />
+        <activity android:name=".MotorForm" />
+        <activity android:name=".MotorInsurance" />
+        <activity android:name=".QuoteDetails" />
         <activity android:name=".InsuranceProducts" />
         <activity android:name=".Quotes" />
         <activity android:name=".PolicyDetails" />

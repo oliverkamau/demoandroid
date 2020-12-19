@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nestedview"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+
+    tools:context=".SelfQuoteDetails"
+    android:backgroundTint="@color/azure"
+    >
+    <RelativeLayout
+        android:id="@+id/myrelative"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <GridLayout
+            android:id="@+id/myselfgrid"
+            android:layout_width="match_parent"
+            android:layout_height="1000dp"
+            android:layout_marginTop="20dp"
+
+            android:layout_margin="20dp"
+
+            >
+<!--
+           <androidx.cardview.widget.CardView
+               android:layout_height="wrap_content"
+               android:layout_width="wrap_content"
+               android:layout_columnWeight="1"
+               android:layout_rowWeight="1"
+               android:layout_row="0"
+               android:layout_column="0"
+               android:elevation="10dp"
+               android:padding="5dp"
+               app:cardCornerRadius="20dp"
+               >
+      <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+          android:orientation="vertical"
+          android:padding="5dp">
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textStyle="bold"
+              android:fontFamily="@font/berkshire_swash"
+              android:textSize="20sp"
+             android:layout_marginLeft="10dp"
+              android:textColor="@color/teal"
+              android:textAlignment="center"
+              android:text="Britam Motor Private"/>
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textStyle="bold"
+              android:fontFamily="@font/berkshire_swash"
+              android:textSize="14sp"
+              android:textAlignment="textEnd"
+              android:layout_marginLeft="10dp"
+              android:layout_marginTop="20dp"
+              android:textColor="@color/teal"
+              android:text="Comprehensive Cover"/>
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textStyle="bold"
+              android:fontFamily="@font/berkshire_swash"
+              android:textSize="14sp"
+              android:textAlignment="textEnd"
+              android:layout_marginLeft="10dp"
+              android:layout_marginTop="20dp"
+              android:textColor="@color/teal"
+              android:text="Premium"/>
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textStyle="bold"
+              android:fontFamily="@font/berkshire_swash"
+              android:textSize="14sp"
+              android:textAlignment="textEnd"
+              android:layout_marginLeft="10dp"
+              android:layout_marginTop="20dp"
+              android:textColor="@color/teal"
+              android:text="KES. 12000"/>
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal">
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:textStyle="bold"
+                  android:fontFamily="@font/berkshire_swash"
+                  android:textSize="14sp"
+                  android:padding="5dp"
+                  android:layout_marginLeft="5dp"
+                  android:drawableStart="@drawable/covered"
+                  android:layout_marginTop="20dp"
+                  android:textColor="@color/teal"/>
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:textStyle="bold"
+                  android:fontFamily="@font/berkshire_swash"
+                  android:textSize="14sp"
+                  android:padding="5dp"
+                  android:layout_marginLeft="5dp"
+                  android:layout_marginTop="20dp"
+                  android:textColor="@color/teal"
+
+                  android:text="Covers for you or anyone else in the car during an accident"/>
+          </LinearLayout>
+
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:layout_marginTop="-15dp">
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:textStyle="bold"
+                  android:fontFamily="@font/berkshire_swash"
+                  android:textSize="14sp"
+                  android:padding="5dp"
+                  android:layout_marginLeft="5dp"
+                  android:drawableStart="@drawable/covered"
+                  android:layout_marginTop="20dp"
+                  android:textColor="@color/teal"/>
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:textStyle="bold"
+                  android:fontFamily="@font/berkshire_swash"
+                  android:textSize="14sp"
+                  android:padding="5dp"
+                  android:layout_marginLeft="5dp"
+                  android:layout_marginTop="20dp"
+                  android:textColor="@color/teal"
+
+                  android:text="Covers for you or anyone else in the car during an accident"/>
+          </LinearLayout>
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:layout_marginTop="-15dp">
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:textStyle="bold"
+                  android:fontFamily="@font/berkshire_swash"
+                  android:textSize="14sp"
+                  android:padding="5dp"
+                  android:layout_marginLeft="5dp"
+                  android:drawableStart="@drawable/covered"
+                  android:layout_marginTop="20dp"
+                  android:textColor="@color/teal"/>
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:textStyle="bold"
+                  android:fontFamily="@font/berkshire_swash"
+                  android:textSize="14sp"
+                  android:padding="5dp"
+                  android:layout_marginLeft="5dp"
+                  android:layout_marginTop="20dp"
+                  android:textColor="@color/teal"
+
+                  android:text="Covers for you or anyone else in the car during an accident"/>
+          </LinearLayout>
+
+   </LinearLayout>
+           </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:elevation="10dp"
+                android:padding="5dp"
+                app:cardCornerRadius="20dp"
+
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/berkshire_swash"
+                        android:textSize="20sp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/teal"
+                        android:textAlignment="center"
+                        android:text="Britam Motor Private"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/berkshire_swash"
+                        android:textSize="14sp"
+                        android:textAlignment="textEnd"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/teal"
+                        android:text="TPO 1 Cover"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/berkshire_swash"
+                        android:textSize="14sp"
+                        android:textAlignment="textEnd"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/teal"
+                        android:text="Premium"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/berkshire_swash"
+                        android:textSize="14sp"
+                        android:textAlignment="textEnd"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/teal"
+                        android:text="KES. 7500"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/berkshire_swash"
+                            android:textSize="14sp"
+                            android:padding="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:drawableStart="@drawable/covered"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/teal"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/berkshire_swash"
+                            android:textSize="14sp"
+                            android:padding="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/teal"
+
+                            android:text="Covers for you or anyone else in the car during an accident"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="-15dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/berkshire_swash"
+                            android:textSize="14sp"
+                            android:padding="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:drawableStart="@drawable/covered"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/teal"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/berkshire_swash"
+                            android:textSize="14sp"
+                            android:padding="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/teal"
+
+                            android:text="Covers for you or anyone else in the car during an accident"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="-15dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/berkshire_swash"
+                            android:textSize="14sp"
+                            android:padding="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:drawableStart="@drawable/covered"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/teal"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/berkshire_swash"
+                            android:textSize="14sp"
+                            android:padding="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/teal"
+
+                            android:text="Covers for you or anyone else in the car during an accident"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:elevation="10dp"
+                android:padding="5dp"
+
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/berkshire_swash"
+                        android:textSize="20sp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/teal"
+                        android:textAlignment="center"
+                        android:text="Britam Motor Private"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/berkshire_swash"
+                        android:textSize="14sp"
+                        android:textAlignment="textEnd"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/teal"
+                        android:text="TPO 2 Cover"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/berkshire_swash"
+                        android:textSize="14sp"
+                        android:textAlignment="textEnd"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/teal"
+                        android:text="Premium"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/berkshire_swash"
+                        android:textSize="14sp"
+                        android:textAlignment="textEnd"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/teal"
+                        android:text="KES. 7000"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/berkshire_swash"
+                            android:textSize="14sp"
+                            android:padding="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:drawableStart="@drawable/covered"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/teal"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/berkshire_swash"
+                            android:textSize="14sp"
+                            android:padding="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/teal"
+
+                            android:text="Covers for you or anyone else in the car during an accident"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="-15dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/berkshire_swash"
+                            android:textSize="14sp"
+                            android:padding="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:drawableStart="@drawable/covered"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/teal"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/berkshire_swash"
+                            android:textSize="14sp"
+                            android:padding="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/teal"
+
+                            android:text="Covers for you or anyone else in the car during an accident"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="-15dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/berkshire_swash"
+                            android:textSize="14sp"
+                            android:padding="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:drawableStart="@drawable/covered"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/teal"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/berkshire_swash"
+                            android:textSize="14sp"
+                            android:padding="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/teal"
+
+                            android:text="Covers for you or anyone else in the car during an accident"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            -->
+        </GridLayout>
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
