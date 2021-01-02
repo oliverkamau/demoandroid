@@ -49,13 +49,14 @@
         app:cardElevation="10dp"
         app:strokeWidth="5dp"
         app:strokeColor="@color/aliceBlue"
+        app:contentPadding="5dp"
         >
 <LinearLayout
     android:id="@+id/parentlinear"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
+android:layout_margin="5dp"
     >
     <GridLayout
         android:id="@+id/originalgrid"
@@ -70,7 +71,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="5dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_column="0"
@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/blowfish"
                 android:text="PRIVATE"
-                android:textSize="16sp"
+                android:textSize="13sp"
                 android:fontFamily="@font/adamina"
                 />
             <TextView
@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:text="Britam Insurance"
-                android:textSize="14sp"
+                android:textSize="11sp"
 
                 />
 
@@ -99,9 +99,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="5dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
             android:layout_column="1"
             android:layout_row="0">
             <TextView
@@ -110,7 +107,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/silver"
                 android:text="Sum Insured"
-                android:textSize="14sp"
+                android:textSize="11sp"
                 android:fontFamily="@font/adamina"
                 />
             <TextView
@@ -119,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:text="1,200,000"
-                android:textSize="14sp"
+                android:textSize="11sp"
 
                 />
 
@@ -129,7 +126,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="5dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_column="0"
@@ -140,7 +136,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/silver"
                 android:text="Cover"
-                android:textSize="14sp"
+                android:textSize="11sp"
                 android:fontFamily="@font/adamina"
                 />
             <TextView
@@ -149,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:text="Comprehensive"
-                android:textSize="14sp"
+                android:textSize="11sp"
 
                 />
 
@@ -160,9 +156,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="10dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
             android:layout_column="1"
             android:layout_row="1">
             <TextView
@@ -171,7 +164,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/silver"
                 android:text="Premium"
-                android:textSize="14sp"
+                android:textSize="11sp"
                 android:fontFamily="@font/adamina"
                 />
             <LinearLayout
@@ -186,7 +179,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/blowfish"
                     android:text="11,600 Ksh"
-                    android:textSize="16sp"
+                    android:textSize="13sp"
 
                     />
                 <com.google.android.material.button.MaterialButton
