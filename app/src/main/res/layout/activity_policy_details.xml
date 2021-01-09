@@ -484,7 +484,7 @@
         <com.google.android.material.tabs.TabLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabMode="fixed"
+            app:tabMode="scrollable"
             app:tabGravity="fill"
             app:tabIndicatorColor="@color/colorAccent"
             android:id="@+id/tabs_layout"

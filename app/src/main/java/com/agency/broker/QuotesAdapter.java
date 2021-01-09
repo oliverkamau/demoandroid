@@ -43,7 +43,7 @@ public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.ViewHolder
             QuotesBean quotesBean=quotesBeanList.get(position);
             holder.prod.setText(quotesBean.getProduct());
             holder.quote.setText(quotesBean.getQuoteNo());
-            holder.status.setText(quotesBean.getStatus());
+           // holder.status.setText(quotesBean.getStatus());
 
         }
         else{
@@ -62,7 +62,7 @@ public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.ViewHolder
             super(itemView);
             prod=itemView.findViewById(R.id.qprod);
             quote=itemView.findViewById(R.id.quoNo);
-            status=itemView.findViewById(R.id.qstatus);
+          //  status=itemView.findViewById(R.id.qstatus);
 
         }
         public void bind(final QuotesBean item, final QuotesAdapter.OnItemClickListener listener) {

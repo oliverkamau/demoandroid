@@ -17,7 +17,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="5dp">
+    android:layout_margin="5dp"
+    android:background="@color/majorBlue">
 
     <TextView
         android:id="@+id/userfriend"
@@ -28,8 +29,9 @@
         android:fontFamily="@font/amarante"
         android:drawableLeft="@drawable/ic_baseline_emoji_people_24"
         android:text="Hello There!"
-        android:textColor="@color/teal"
-        android:textSize="18sp" />
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:drawableTint="@color/white"/>
 
     <TextView
         android:id="@+id/userfriend1"
@@ -38,7 +40,7 @@
         android:layout_marginStart="10dp"
         android:fontFamily="@font/amarante"
         android:text="Below are our various motor products lets get started,"
-        android:textColor="@color/teal"
+        android:textColor="@color/white"
         android:textSize="14sp" />
 
     <TextView
@@ -48,7 +50,7 @@
         android:layout_marginStart="10dp"
         android:fontFamily="@font/amarante"
         android:text="proceed to select the type of vehicle you want insured"
-        android:textColor="@color/teal"
+        android:textColor="@color/white"
         android:textSize="14sp" />
 
     <TextView
@@ -58,7 +60,7 @@
         android:layout_marginStart="10dp"
         android:fontFamily="@font/amarante"
         android:text="We got you covered in a click!"
-        android:textColor="@color/teal"
+        android:textColor="@color/white"
         android:textSize="14sp" />
 </LinearLayout>
 
@@ -73,7 +75,7 @@
             android:layout_below="@id/linearmotor"
             android:layout_marginTop="20dp"
             android:columnCount="2"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:rowCount="3"
             >
 

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login"
-    android:background="@color/azure"
+    tools:context=".MotorForm"
+    android:background="#fff"
     >
 
     <LinearLayout
@@ -26,10 +26,11 @@
             android:layout_height="wrap_content"
             android:text="This will only take a few seconds"
             android:textStyle="italic"
-            android:textColor="@color/black"
+            android:textColor="@color/majorBlue"
             android:textSize="20sp"
             android:layout_marginLeft="40dp"
             android:drawableStart="@drawable/ic_baseline_thumb_up_24"
+            android:drawableTint="@color/majorBlue"
             android:layout_marginTop="50dp"
             />
 
@@ -44,6 +45,48 @@
             android:padding="10dp">
 
             <TextView
+                android:id="@+id/covtype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WHAT TYPE OF COVER DO YOU WANT?"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginTop="20dp"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusBottomEnd="5dp"
+                app:boxStrokeColor="#1F3FFA"
+                android:id="@+id/covetype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintTextColor="#1F3FFA"
+                android:background="@color/honeyDew"
+                app:hintEnabled="false"
+                android:backgroundTint="#fff"
+                app:startIconDrawable="@drawable/verified"
+                app:startIconTint="#1F3FFA"
+                >
+
+                <AutoCompleteTextView
+                    android:id="@+id/covtyp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:inputType="none"
+                    android:textColor="#000"
+                    />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
                 android:id="@+id/prompt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -55,7 +98,7 @@
                 />
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/LoginTextInputLayoutStyle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_marginTop="10dp"
                 app:boxCornerRadiusTopStart="5dp"
                 app:boxCornerRadiusTopEnd="5dp"
@@ -66,7 +109,8 @@
                 android:layout_height="wrap_content"
                 android:hint="KCP 096Y"
                 app:hintTextColor="#1F3FFA"
-                android:background="@color/honeyDew"
+                android:background="#fff"
+                app:boxStrokeColor="#1F3FFA"
                 app:hintEnabled="false"
 
                 >
@@ -93,7 +137,7 @@
                 />
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/LoginTextInputLayoutStyle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_marginTop="10dp"
                 app:boxCornerRadiusTopStart="5dp"
                 app:boxCornerRadiusTopEnd="5dp"
@@ -104,7 +148,8 @@
                 android:layout_height="wrap_content"
                 android:hint="TOYOTA, NISSAN"
                 app:hintTextColor="#1F3FFA"
-                android:background="@color/honeyDew"
+                android:background="#fff"
+                app:boxStrokeColor="#1F3FFA"
                 app:hintEnabled="false"
 
                 >
@@ -131,7 +176,7 @@
                 />
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/LoginTextInputLayoutStyle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_marginTop="10dp"
                 app:boxCornerRadiusTopStart="5dp"
                 app:boxCornerRadiusTopEnd="5dp"
@@ -142,7 +187,8 @@
                 android:layout_height="wrap_content"
                 android:hint=""
                 app:hintTextColor="#1F3FFA"
-                android:background="@color/honeyDew"
+                android:background="#fff"
+                app:boxStrokeColor="#1F3FFA"
                 app:hintEnabled="false"
 
                 >
@@ -168,7 +214,7 @@
                 />
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/LoginTextInputLayoutStyle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_marginTop="10dp"
                 app:boxCornerRadiusTopStart="5dp"
                 app:boxCornerRadiusTopEnd="5dp"
@@ -179,7 +225,8 @@
                 android:layout_height="wrap_content"
                 android:hint=""
                 app:hintTextColor="#1F3FFA"
-                android:background="@color/honeyDew"
+                android:background="#fff"
+                app:boxStrokeColor="#1F3FFA"
                 app:hintEnabled="false"
 
                 >
@@ -206,7 +253,7 @@
                 />
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/LoginTextInputLayoutStyle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_marginTop="10dp"
                 app:boxCornerRadiusTopStart="5dp"
                 app:boxCornerRadiusTopEnd="5dp"
@@ -217,7 +264,8 @@
                 android:layout_height="wrap_content"
                 android:hint=""
                 app:hintTextColor="#1F3FFA"
-                android:background="@color/honeyDew"
+                android:background="#fff"
+                app:boxStrokeColor="#1F3FFA"
                 app:hintEnabled="false"
 
                 >
@@ -244,7 +292,7 @@
                 />
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/LoginTextInputLayoutStyle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_marginTop="10dp"
                 app:boxCornerRadiusTopStart="5dp"
                 app:boxCornerRadiusTopEnd="5dp"
@@ -254,10 +302,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint=""
+                android:clickable="true"
+                android:focusable="true"
                 app:hintTextColor="#1F3FFA"
-                android:background="@color/honeyDew"
+                android:background="#fff"
+                app:boxStrokeColor="#1F3FFA"
                 app:hintEnabled="false"
-
+                app:endIconDrawable="@drawable/calendar"
+                app:endIconMode="custom"
+                app:endIconTint="@color/colorAccent"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -282,7 +335,7 @@
                 />
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/LoginTextInputLayoutStyle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_marginTop="10dp"
                 app:boxCornerRadiusTopStart="5dp"
                 app:boxCornerRadiusTopEnd="5dp"
@@ -293,7 +346,9 @@
                 android:layout_height="wrap_content"
                 android:hint=""
                 app:hintTextColor="#1F3FFA"
-                android:background="@color/honeyDew"
+                android:background="#fff"
+                app:boxStrokeColor="#1F3FFA"
+
                 app:hintEnabled="false"
 
                 >
@@ -316,7 +371,7 @@
                 android:text="Generate Quote"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                app:backgroundTint="@color/teal"
+                app:backgroundTint="@color/teal_200"
                 />
 
         </LinearLayout>

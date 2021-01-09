@@ -11,13 +11,12 @@
         android:id="@+id/selfquoteheader"
         android:layout_width="match_parent"
         android:layout_height="140dp"
-        android:layout_margin="10dp"
         android:clickable="false"
         android:focusable="true"
         app:cardElevation="10dp"
         app:strokeWidth="5dp"
-        app:cardBackgroundColor="@color/azure"
-        app:strokeColor="@color/honeyDew"
+        app:cardBackgroundColor="@color/majorBlue"
+        app:strokeColor="@color/blowfish"
         >
     <LinearLayout
 
@@ -34,7 +33,7 @@
             android:textStyle="bold"
             android:fontFamily="@font/adamina"
              android:textAlignment="center"
-            android:textColor="@color/black"            />
+            android:textColor="@color/white"            />
 
 
         <TextView
@@ -45,7 +44,7 @@
             android:text=""
             android:textSize="15sp"
             android:fontFamily="@font/adamina"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             />
     </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

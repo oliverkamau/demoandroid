@@ -2,7 +2,6 @@ package com.agency.broker;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,6 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,7 +18,6 @@ import com.google.android.material.card.MaterialCardView;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
-import java.text.ParseException;
 import java.util.List;
 import java.util.Locale;
 
@@ -31,6 +28,7 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
     GridLayout gridLayout;
     Context context;
     List<SelfQuoteBean> selfQuoteBeans;
+    List<AddOnBean> addOnBeans;
     private final OnItemClickListener listener;
 
 
@@ -57,22 +55,102 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
 
                 holder.bind(selfQuoteBeans.get(position), listener);
                 SelfQuoteBean selfQuoteBean = selfQuoteBeans.get(position);
-                holder.mypriv.setText("PRIVATE");
+               // addOnBeans=selfQuoteBean.getQuoteAddOns();
+                if(selfQuoteBean.getQuoteAddOns().size()== 1) {
+                    holder.generateCard1();
+                    holder.l1=holder.generateL1();
+                    holder.l5=holder.generateL5();
+                    holder.t1=holder.generateT1(selfQuoteBean.getQuoteAddOns().get(0).getAddOnName());
+                    holder.t2=holder.generateT2(selfQuoteBean.getQuoteAddOns().get(0).getAddOnPrice());
+                }
+                else if(selfQuoteBean.getQuoteAddOns().size()==2){
+
+                    if(gridLayout!=null) {
+                        gridLayout.removeAllViews();
+                    }
+                    holder.premium.setPadding(0,10,0,0);
+                    holder.generateGridLayout();
+                    holder.generateCard1();
+                    holder.generateCard2();
+                    holder.l1=holder.generateL1();
+                    holder.l2=holder.generateL2();
+
+                    holder.l5=holder.generateL5();
+                    holder.l6=holder.generateL6();
+                    holder.t1=holder.generateT1(selfQuoteBean.getQuoteAddOns().get(0).getAddOnName());
+                    holder.t2=holder.generateT2(selfQuoteBean.getQuoteAddOns().get(0).getAddOnPrice());
+                    holder.t3=holder.generateT3(selfQuoteBean.getQuoteAddOns().get(1).getAddOnName());
+                    holder.t4=holder.generateT4(selfQuoteBean.getQuoteAddOns().get(1).getAddOnPrice());
+            }
+                else if(selfQuoteBean.getQuoteAddOns().size()==3){
+
+                    if(gridLayout!=null) {
+                        gridLayout.removeAllViews();
+                    }
+                    holder.premium.setPadding(0,10,0,0);
+                    holder.generateGridLayout();
+                    holder.generateCard1();
+                    holder.generateCard2();
+                    holder.generateCard3();
+                    holder.l1=holder.generateL1();
+                    holder.l2=holder.generateL2();
+                    holder.l3=holder.generateL3();
+                    holder.l5=holder.generateL5();
+                    holder.l6=holder.generateL6();
+                    holder.l7=holder.generateL7();
+                    holder.t1=holder.generateT1(selfQuoteBean.getQuoteAddOns().get(0).getAddOnName());
+                    holder.t2=holder.generateT2(selfQuoteBean.getQuoteAddOns().get(0).getAddOnPrice());
+                    holder.t3=holder.generateT3(selfQuoteBean.getQuoteAddOns().get(1).getAddOnName());
+                    holder.t4=holder.generateT4(selfQuoteBean.getQuoteAddOns().get(1).getAddOnPrice());
+                    holder.t5=holder.generateT5(selfQuoteBean.getQuoteAddOns().get(2).getAddOnName());
+                    holder.t6=holder.generateT6(selfQuoteBean.getQuoteAddOns().get(2).getAddOnPrice());
+                }
+                else if(selfQuoteBean.getQuoteAddOns().size()==4){
+
+                    if(gridLayout!=null) {
+                        gridLayout.removeAllViews();
+                    }
+                    holder.premium.setPadding(0,10,0,0);
+                    holder.generateGridLayout();
+                    holder.generateCard1();
+                    holder.generateCard2();
+                    holder.generateCard3();
+                    holder.generateCard4();
+                    holder.l1=holder.generateL1();
+                    holder.l2=holder.generateL2();
+                    holder.l3=holder.generateL3();
+                    holder.l4=holder.generateL4();
+                    holder.l5=holder.generateL5();
+                    holder.l6=holder.generateL6();
+                    holder.l7=holder.generateL7();
+                    holder.l8=holder.generateL8();
+                    holder.t1=holder.generateT1(selfQuoteBean.getQuoteAddOns().get(0).getAddOnName());
+                    holder.t2=holder.generateT2(selfQuoteBean.getQuoteAddOns().get(0).getAddOnPrice());
+                    holder.t3=holder.generateT3(selfQuoteBean.getQuoteAddOns().get(1).getAddOnName());
+                    holder.t4=holder.generateT4(selfQuoteBean.getQuoteAddOns().get(1).getAddOnPrice());
+                    holder.t5=holder.generateT5(selfQuoteBean.getQuoteAddOns().get(2).getAddOnName());
+                    holder.t6=holder.generateT6(selfQuoteBean.getQuoteAddOns().get(2).getAddOnPrice());
+                    holder.t7=holder.generateT7(selfQuoteBean.getQuoteAddOns().get(3).getAddOnName());
+                    holder.t8=holder.generateT8(selfQuoteBean.getQuoteAddOns().get(3).getAddOnPrice());
+                }
+            holder.mypriv.setText("PRIVATE");
                 holder.insurance.setText(selfQuoteBean.getName());
                 holder.underwriter.setText("Sum Insured");
                 String sum=selfQuoteBean.getSumInsured().substring(0, selfQuoteBean.getSumInsured().indexOf('.'));
                 Integer s=Integer.parseInt(sum);
-                holder.sum.setText(String.format("%s.00 Ksh", NumberFormat.getNumberInstance(Locale.US).format(s)));
+                String h="Ksh "+NumberFormat.getNumberInstance(Locale.US).format(s)+".00";
+                holder.sum.setText(h);
                 holder.cover.setText("Cover");
                 holder.coverval.setText(selfQuoteBean.getCover());
                 holder.myprem.setText("Premium");
                 String prem=selfQuoteBean.getPremium().substring(0, selfQuoteBean.getPremium().indexOf('.'));
                 Integer p=Integer.parseInt(prem);
-                holder.premium.setText(String.format("%s.00 Ksh", NumberFormat.getNumberInstance(Locale.US).format(p)));
+                String pr="Ksh "+NumberFormat.getNumberInstance(Locale.US).format(p)+".00";
+
+                holder.premium.setText(pr);
 
         }
         else{
-            return;
         }
     }
 
@@ -85,9 +163,9 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
         TextView insurance,sum,premium,mypriv,underwriter,cover,coverval,myprem;
            Button btn;
            MaterialButton btn2,btn3;
-          MaterialCardView c1,c2,c3,c4;
+          MaterialCardView c1,c2,c3,c4,c5,c6,c7,c8;
         LinearLayout iconlinear,replacer,parentlinear,linearLayout,motherlayout,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12;
-        TextView t,t0,t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
+        TextView t,t0,t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,tin,tin2,tin3,tin4,tin5,tin6,tin7,tin8,tin9,tin10;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             insurance=itemView.findViewById(R.id.myunderwriter);
@@ -108,36 +186,44 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
             btn3=new MaterialButton(context);
             gridLayout=new GridLayout(context);
             t=new TextView(context);
+
             t0=new TextView(context);
             btn2=new MaterialButton(context);
             c1=new MaterialCardView(context);
             c2=new MaterialCardView(context);
             c3=new MaterialCardView(context);
             c4=new MaterialCardView(context);
+            c5=new MaterialCardView(context);
+            c6=new MaterialCardView(context);
+            c7=new MaterialCardView(context);
+            c8=new MaterialCardView(context);
             t2=new TextView(context);
 
 
             c1.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
                     String addOn=t2.getText().toString();
-                    addOn=addOn.substring(0, addOn.indexOf(' '));
+                   // addOn=addOn.substring(0, addOn.indexOf(' '));
+                    addOn=addOn.substring(addOn.lastIndexOf(" ") + 1);
                     String premium=t10.getText().toString();
-
+                   // premium=premium.substring(0, premium.indexOf(' '));
+                    premium=premium.substring(premium.lastIndexOf(" ") + 1);
                     premium=premium.substring(0, premium.indexOf('.'));
                    premium=premium.replaceAll(",","");
                     BigDecimal prem=BigDecimal.valueOf(Long.parseLong(premium));
                     BigDecimal a=BigDecimal.valueOf(Long.parseLong(addOn));
                     prem=prem.add(a);
                     if(t2.getText().toString().contains("-")){
-
-                        t10.setText(String.format("%s.00 Ksh", NumberFormat.getNumberInstance(Locale.US).format(prem)));
-                        t2.setText(String.format("200 Ksh"));
+                    String num="Ksh "+NumberFormat.getNumberInstance(Locale.US).format(prem)+".00";
+                        t10.setText(num);
+                        t2.setText(String.format("Ksh 200"));
                         c1.setCardBackgroundColor(context.getColor(R.color.white));
                         t2.setTextColor(context.getColor(R.color.silver));
                     }
                     else{
-                        t10.setText(String.format("%s.00 Ksh", NumberFormat.getNumberInstance(Locale.US).format(prem)));
-                        t2.setText(String.format("-200 Ksh"));
+                        String num="Ksh "+NumberFormat.getNumberInstance(Locale.US).format(prem)+".00";
+                        t10.setText(num);
+                        t2.setText(String.format("Ksh -200"));
                         c1.setCardBackgroundColor(context.getColor(R.color.azure));
                         t2.setTextColor(context.getColor(R.color.honeyDew));
                     }
@@ -148,8 +234,10 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
             c4.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
                     String addOn=t8.getText().toString();
-                    addOn=addOn.substring(0, addOn.indexOf(' '));
+                   // addOn=addOn.substring(0, addOn.indexOf(' '));
+                    addOn=addOn.substring(addOn.lastIndexOf(" ") + 1);
                     String premium=t10.getText().toString();
+                    premium=premium.substring(premium.lastIndexOf(" ") + 1);
                     premium=premium.substring(0, premium.indexOf('.'));
                     premium=premium.replaceAll(",","");
 
@@ -157,16 +245,21 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
                     BigDecimal a=BigDecimal.valueOf(Long.parseLong(addOn));
                     prem=prem.add(a);
                     if(t8.getText().toString().contains("-")){
-                        t10.setText(String.format("%s.00 Ksh", NumberFormat.getNumberInstance(Locale.US).format(prem)));
-                        t8.setText(String.format("500 Ksh"));
+                        String num="Ksh "+NumberFormat.getNumberInstance(Locale.US).format(prem)+".00";
+                        t10.setText(num);
+                        t8.setText(String.format("Ksh 500"));
                         c4.setCardBackgroundColor(context.getColor(R.color.white));
                         t8.setTextColor(context.getColor(R.color.silver));
+                        t8.setTextSize(11);
                     }
                     else{
-                        t10.setText(String.format("%s.00 Ksh", NumberFormat.getNumberInstance(Locale.US).format(prem)));
-                        t8.setText(String.format("-500 Ksh"));
+                        String num="Ksh "+NumberFormat.getNumberInstance(Locale.US).format(prem)+".00";
+                        t10.setText(num);
+                        t8.setText(String.format("Ksh -500"));
                         c4.setCardBackgroundColor(context.getColor(R.color.azure));
                         t8.setTextColor(context.getColor(R.color.honeyDew));
+                        t8.setTextSize(11);
+
                     }
 
 
@@ -175,24 +268,29 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
             c2.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
                     String addOn=t4.getText().toString();
-                    addOn=addOn.substring(0, addOn.indexOf(' '));
+                    addOn=addOn.substring(addOn.lastIndexOf(" ") + 1);
                     String premium=t10.getText().toString();
+                    premium=premium.substring(premium.lastIndexOf(" ") + 1);
                     premium=premium.substring(0, premium.indexOf('.'));
                     premium=premium.replaceAll(",","");
                     BigDecimal prem=BigDecimal.valueOf(Long.parseLong(premium));
                     BigDecimal a=BigDecimal.valueOf(Long.parseLong(addOn));
                     prem=prem.add(a);
                     if(t4.getText().toString().contains("-")){
-                        t10.setText(String.format("%s.00 Ksh", NumberFormat.getNumberInstance(Locale.US).format(prem)));
-                        t4.setText(String.format("300 Ksh"));
+                        String num="Ksh "+NumberFormat.getNumberInstance(Locale.US).format(prem)+".00";
+                        t10.setText(num);
+                        t4.setText(String.format("Ksh 300"));
                         c2.setCardBackgroundColor(context.getColor(R.color.white));
                         t4.setTextColor(context.getColor(R.color.silver));
+                        t4.setTextSize(11);
                     }
                     else{
-                        t10.setText(String.format("%s.00 Ksh", NumberFormat.getNumberInstance(Locale.US).format(prem)));
-                        t4.setText(String.format("-300 Ksh"));
+                        String num="Ksh "+NumberFormat.getNumberInstance(Locale.US).format(prem)+".00";
+                        t10.setText(num);
+                        t4.setText(String.format("Ksh -300"));
                         c2.setCardBackgroundColor(context.getColor(R.color.azure));
                         t4.setTextColor(context.getColor(R.color.honeyDew));
+                        t4.setTextSize(11);
                     }
 
 
@@ -201,8 +299,9 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
             c3.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
                     String addOn=t6.getText().toString();
-                    addOn=addOn.substring(0, addOn.indexOf(' '));
+                    addOn=addOn.substring(addOn.lastIndexOf(" ") + 1);
                     String premium=t10.getText().toString();
+                    premium=premium.substring(premium.lastIndexOf(" ") + 1);
                     premium=premium.substring(0, premium.indexOf('.'));
                     premium=premium.replaceAll(",","");
 
@@ -210,16 +309,21 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
                     BigDecimal a=BigDecimal.valueOf(Long.parseLong(addOn));
                     prem=prem.add(a);
                     if(t6.getText().toString().contains("-")){
-                        t10.setText(String.format("%s.00 Ksh", NumberFormat.getNumberInstance(Locale.US).format(prem)));
-                        t6.setText(String.format("450 Ksh"));
+                        String num="Ksh "+NumberFormat.getNumberInstance(Locale.US).format(prem)+".00";
+                        t10.setText(num);
+                        t6.setText(String.format("Ksh 450"));
                         c3.setCardBackgroundColor(context.getColor(R.color.white));
                         t6.setTextColor(context.getColor(R.color.silver));
+                        t6.setTextSize(11);
                     }
                     else{
-                        t10.setText(String.format("%s.00 Ksh", NumberFormat.getNumberInstance(Locale.US).format(prem)));
-                        t6.setText(String.format("-450 Ksh"));
+                        String num="Ksh "+NumberFormat.getNumberInstance(Locale.US).format(prem)+".00";
+
+                        t10.setText(num);
+                        t6.setText(String.format("Ksh -450"));
                         c3.setCardBackgroundColor(context.getColor(R.color.azure));
                         t6.setTextColor(context.getColor(R.color.honeyDew));
+                        t6.setTextSize(11);
                     }
 
 
@@ -235,8 +339,10 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
                 }
             });
             btn3.setOnClickListener(v1 -> {
-                gridLayout.removeAllViews();
-                ((ViewGroup)gridLayout.getParent()).removeView(gridLayout);
+                if(gridLayout!=null) {
+                    gridLayout.removeAllViews();
+                    ((ViewGroup) gridLayout.getParent()).removeView(gridLayout);
+                }
                 // gridLayout.setVisibility(View.GONE);
                 t.setVisibility(View.GONE);
                 t0.setVisibility(View.GONE);
@@ -305,7 +411,11 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
             btn.setVisibility(View.GONE);
             generateButton3();
 
-             gridLayout.removeAllViews();
+            // gridLayout.removeAllViews();
+            if(gridLayout!=null){
+                gridLayout.setVisibility(View.VISIBLE);
+            }
+
             premium.setPadding(0,10,0,0);
             //btn3=new MaterialButton(context);
             if(btn3.getParent() != null) {
@@ -320,7 +430,8 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
 
 
             generateGridLayout();
-
+            createCards();
+            /*
             generateCard1();
 
             generateCard2();
@@ -329,11 +440,13 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
 
             generateCard4();
 
+             */
+
 
             replacer=generateReplacer();
 
 
-
+/*
             l1=generateL1();
 
 
@@ -345,17 +458,19 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
 
             l4=generateL4();
 
-
-            l5=generateL5();
-
-
-            l6=generateL6();
+ */
 
 
-            l7=generateL7();
+           // l5=generateL5();
 
 
-            l8=generateL8();
+           // l6=generateL6();
+
+
+           // l7=generateL7();
+
+
+            //l8=generateL8();
 
 
             l9=generateL9();
@@ -373,117 +488,188 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
             // t0=new TextView(context);
             generateT0();
 
-            t1=generateT1();
+           // t1=generateT1();
 
 
             t9=generateT9();
 
             t10=generateT10();
 
-            generateT2();
+            //generateT2();
 
-            t3=generateT3();
+           // t3=generateT3();
 
-            t4=generateT4();
+           // generateT4();
 
-            t5=generateT5();
+           // t5=generateT5();
 
-            t6=generateT6();
+           // generateT6();
 
-            t7=generateT7();
+           // t7=generateT7();
 
-            t8=generateT8();
+           // generateT8(selfQuoteBean.getQuoteAddOns().get(2).getAddOnPrice());
 
-            if(t1.getParent() != null) {
-                ((ViewGroup)t1.getParent()).removeView(t1);
-                generateT1();
+            if(t1!=null) {
+                gridLayout.setVisibility(View.VISIBLE);
+
+                if (t1.getParent() != null) {
+                    gridLayout.setVisibility(View.VISIBLE);
+
+                }
+                else {
+                    addT1();
+                }
             }
-            addT1();
-            if(t2.getParent() != null) {
-                ((ViewGroup)t2.getParent()).removeView(t2);
-                generateT2();
-            }
-            addT2();
 
-            if(t3.getParent() != null) {
-                ((ViewGroup)t3.getParent()).removeView(t3);
-                generateT3();
+            if(t2!=null) {
+                gridLayout.setVisibility(View.VISIBLE);
+                if (t2.getParent() != null) {
+                    gridLayout.setVisibility(View.VISIBLE);
+                }
+                else {
+                    addT2();
+                }
             }
-            addT3();
 
-            if(t4.getParent() != null) {
-                ((ViewGroup)t4.getParent()).removeView(t4);
-                generateT4();
-            }
-            addT4();
+            if(t3!=null) {
+                gridLayout.setVisibility(View.VISIBLE);
 
-            if(t5.getParent() != null) {
-                ((ViewGroup)t5.getParent()).removeView(t5);
-                generateT5();
-            }
-            addT5();
+                if (t3.getParent() != null) {
+                    gridLayout.setVisibility(View.VISIBLE);
 
-            if(t6.getParent() != null) {
-                ((ViewGroup)t6.getParent()).removeView(t6);
-                generateT6();
+                }
+                else{
+                    addT3();
+                }
             }
-            addT6();
-            if(t7.getParent() != null) {
-                ((ViewGroup)t7.getParent()).removeView(t7);
-                generateT7();
-            }
-            addT7();
 
-            if(t8.getParent() != null) {
-                ((ViewGroup)t8.getParent()).removeView(t8);
-                generateT8();
-            }
-            addT8();
+            if(t4!=null) {
+                gridLayout.setVisibility(View.VISIBLE);
 
-            if(l1.getParent() != null) {
-                ((ViewGroup)l1.getParent()).removeView(l1);
-                generateL1();
-            }
-            addL1();
+                if (t4.getParent() != null) {
+                    gridLayout.setVisibility(View.VISIBLE);
 
-            if(l2.getParent() != null) {
-                ((ViewGroup)l2.getParent()).removeView(l2);
-                generateL2();
+                }
+                else {
+                    addT4();
+                }
             }
-            addL2();
 
-            if(l3.getParent() != null) {
-                ((ViewGroup)l3.getParent()).removeView(l3);
-                generateL3();
-            }
-            addL3();
+            if(t5!=null) {
 
-            if(l4.getParent() != null) {
-                ((ViewGroup)l4.getParent()).removeView(l4);
-                generateL4();
-            }
-            addL4();
+                gridLayout.setVisibility(View.VISIBLE);
 
-            if(c1.getParent() != null) {
-                ((ViewGroup)c1.getParent()).removeView(c1);
-                generateCard1();
+
+                if (t5.getParent() != null) {
+                    gridLayout.setVisibility(View.VISIBLE);
+
+                }
+                else {
+                    addT5();
+                }
             }
-            addC1();
-            if(c2.getParent() != null) {
-                ((ViewGroup)c2.getParent()).removeView(c2);
-                generateCard2();
+            if(t6!=null) {
+                gridLayout.setVisibility(View.VISIBLE);
+
+                if (t6.getParent() != null) {
+                    gridLayout.setVisibility(View.VISIBLE);
+
+                }
+                else {
+                    addT6();
+                }
+
             }
-            addC2();
-            if(c3.getParent() != null) {
-                ((ViewGroup)c3.getParent()).removeView(c3);
-                generateCard3();
+
+            if(t7!=null) {
+
+                gridLayout.setVisibility(View.VISIBLE);
+
+
+                if (t7.getParent() != null) {
+                    gridLayout.setVisibility(View.VISIBLE);
+
+                }
+                else {
+                    addT7();
+                }
             }
-            addC3();
-            if(c4.getParent() != null) {
-                ((ViewGroup)c4.getParent()).removeView(c4);
-                generateCard4();
+
+            if(t8!=null) {
+
+                gridLayout.setVisibility(View.VISIBLE);
+
+                if (t8.getParent() != null) {
+                    gridLayout.setVisibility(View.VISIBLE);
+
+                }
+                else {
+                    addT8();
+                }
             }
-            addC4();
+            if(l1!=null) {
+                if (l1.getParent() != null) {
+                    ((ViewGroup) l1.getParent()).removeView(l1);
+                    generateL1();
+                }
+                addL1();
+            }
+
+            if(l2!=null) {
+                if (l2.getParent() != null) {
+                    ((ViewGroup) l2.getParent()).removeView(l2);
+                    generateL2();
+                }
+                addL2();
+            }
+
+            if(l3!=null) {
+                if (l3.getParent() != null) {
+                    ((ViewGroup) l3.getParent()).removeView(l3);
+                    generateL3();
+                }
+                addL3();
+            }
+
+            if(l4!=null) {
+                if (l4.getParent() != null) {
+                    ((ViewGroup) l4.getParent()).removeView(l4);
+                    generateL4();
+                }
+                addL4();
+
+            }
+            if(c1!=null) {
+                if (c1.getParent() != null) {
+                    ((ViewGroup) c1.getParent()).removeView(c1);
+                    generateCard1();
+                }
+                addC1();
+            }
+
+            if(c2!=null) {
+                if (c2.getParent() != null) {
+                    ((ViewGroup) c2.getParent()).removeView(c2);
+                    generateCard2();
+                }
+                addC2();
+            }
+
+            if(c3!=null) {
+                if (c3.getParent() != null) {
+                    ((ViewGroup) c3.getParent()).removeView(c3);
+                    generateCard3();
+                }
+                addC3();
+            }
+
+            if(c4!=null) {
+                if (c4.getParent() != null) {
+                    ((ViewGroup) c4.getParent()).removeView(c4);
+                    generateCard4();
+                }
+                addC4();
+            }
 
             if(t9.getParent() != null) {
                 ((ViewGroup)t9.getParent()).removeView(t9);
@@ -507,43 +693,53 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
                 generateT0();
             }
             addT0();
-
-            if(l5.getParent() != null) {
-                ((ViewGroup)l5.getParent()).removeView(l5);
-                generateL5();
+            if(l5!=null) {
+                if (l5.getParent() != null) {
+                    ((ViewGroup) l5.getParent()).removeView(l5);
+                    generateL5();
+                }
+                addL5();
             }
-            addL5();
 
-            if(l6.getParent() != null) {
-                ((ViewGroup)l6.getParent()).removeView(l6);
-                generateL6();
+            if(l6!=null) {
+                if (l6.getParent() != null) {
+                    ((ViewGroup) l6.getParent()).removeView(l6);
+                    generateL6();
+                }
+                addL6();
             }
-            addL6();
 
-            if(l7.getParent() != null) {
-                ((ViewGroup)l7.getParent()).removeView(l7);
-                generateL7();
+            if(l7!=null) {
+                if (l7.getParent() != null) {
+                    ((ViewGroup) l7.getParent()).removeView(l7);
+                    generateL7();
+                }
+                addL7();
             }
-            addL7();
 
-            if(l8.getParent() != null) {
-                ((ViewGroup)l8.getParent()).removeView(l8);
-                generateL8();
+            if(l8!=null) {
+                if (l8.getParent() != null) {
+                    ((ViewGroup) l8.getParent()).removeView(l8);
+                    generateL8();
+                }
+                addL8();
             }
-            addL8();
 
-            if(l9.getParent() != null) {
-                ((ViewGroup)l9.getParent()).removeView(l9);
-                generateL9();
+            if(l9!=null) {
+                if (l9.getParent() != null) {
+                    ((ViewGroup) l9.getParent()).removeView(l9);
+                    generateL9();
+                }
+                addL9();
             }
-            addL9();
 
-            if(l10.getParent() != null) {
-                ((ViewGroup)l10.getParent()).removeView(l10);
-                generateL9();
+            if(l10!=null) {
+                if (l10.getParent() != null) {
+                    ((ViewGroup) l10.getParent()).removeView(l10);
+                    generateL9();
+                }
+                addL10();
             }
-            addL10();
-
 
            // if(gridLayout.getParent() != null) {
             //    ((ViewGroup)gridLayout.getParent()).removeView(gridLayout);
@@ -632,22 +828,29 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
         }
 
         private void addC4() {
-            l8.addView(c4);
-
+            if(l8!=null) {
+                l8.addView(c4);
+            }
 
         }
 
         private void addC3() {
-            l7.addView(c3);
+            if(l7!=null) {
+                l7.addView(c3);
+            }
         }
 
         private void addC2() {
-            l6.addView(c2);
+            if(l6!=null) {
+                l6.addView(c2);
+            }
 
         }
 
         private void addC1() {
-            l5.addView(c1);
+            if(l5!=null) {
+                l5.addView(c1);
+            }
 
         }
 
@@ -704,67 +907,79 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
 
         }
 
-        private TextView generateT8() {
-            TextView t8=new TextView(context);
-            t8.setText("500 Ksh");
-            t8.setPadding(5,5,5,5);
-            t8.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-            t8.setTextSize(11);
-            return t8;
+        private TextView generateT8(BigDecimal addOnPrice) {
+            String add=addOnPrice.toString();
+            add=add.substring(0, add.indexOf('.'));
+            String h="Ksh "+add;
+            TextView tView=new TextView(context);
+            tView.setText(h);
+            tView.setPadding(5,5,5,5);
+            tView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            tView.setTextSize(11);
+            return tView;
         }
 
-        private TextView generateT7() {
+        private TextView generateT7(String addOnName) {
             TextView t7=new TextView(context);
-            t7.setText("Fire & Theft");
+            t7.setText(addOnName);
             t7.setPadding(5,5,5,5);
             t7.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             t7.setTextSize(11);
             return t7;
         }
 
-        private TextView generateT6() {
+        private TextView generateT6(BigDecimal addOnPrice) {
+            String add=addOnPrice.toString();
+            add=add.substring(0, add.indexOf('.'));
+            String h="Ksh "+add;
             TextView t6=new TextView(context);
-            t6.setText("450 Ksh");
+            t6.setText(h);
             t6.setPadding(5,5,5,5);
             t6.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             t6.setTextSize(11);
             return t6;
-
         }
 
-        private TextView generateT5() {
+        private TextView generateT5(String addOnName) {
             TextView t5=new TextView(context);
-            t5.setText("AA membership");
+            t5.setText(addOnName);
             t5.setPadding(5,5,5,5);
             t5.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             t5.setTextSize(11);
             return t5;
         }
 
-        private TextView generateT4() {
-            TextView t4=new TextView(context);
-            t4.setText("300 Ksh");
-            t4.setPadding(5,5,5,5);
-            t4.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-            t4.setTextSize(11);
-            return t4;
+        private TextView generateT4(BigDecimal addOnPrice) {
+            String add=addOnPrice.toString();
+            add=add.substring(0, add.indexOf('.'));
+            String h="Ksh "+add;
+            TextView tView=new TextView(context);
+            tView.setText(h);
+            tView.setPadding(5,5,5,5);
+            tView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            tView.setTextSize(11);
+            return tView;
         }
 
-        private TextView generateT3() {
-            TextView t3=new TextView(context);
-            t3.setText("Radio & Cassette");
-            t3.setPadding(5,5,5,5);
-            t3.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-            t3.setTextSize(11);
-            return t3;
+        private TextView generateT3(String addOnName) {
+            TextView tView=new TextView(context);
+            tView.setText(addOnName);
+            tView.setPadding(5,5,5,5);
+            tView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            tView.setTextSize(11);
+            return tView;
         }
 
-        private void generateT2() {
-            t2.setText("200 Ksh");
-            t2.setPadding(5,5,5,5);
-            t2.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-            t2.setTextSize(11);
-
+        private TextView generateT2(BigDecimal addOnPrice) {
+            String add=addOnPrice.toString();
+            add=add.substring(0, add.indexOf('.'));
+            String h="Ksh "+add;
+            TextView tView=new TextView(context);
+            tView.setText(h);
+            tView.setPadding(5,5,5,5);
+            tView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            tView.setTextSize(11);
+             return tView;
         }
 
         private TextView generateT10() {
@@ -793,9 +1008,9 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
 
         }
 
-        private TextView generateT1() {
+        private TextView generateT1(String addOnName) {
             TextView t1=new TextView(context);
-            t1.setText("Windscreen");
+            t1.setText(addOnName);
             t1.setPadding(5,5,5,5);
             t1.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             t1.setTextSize(11);
@@ -821,7 +1036,7 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
             btn2.setBackgroundColor(context.getColor(R.color.teal));
             btn2.setCornerRadius(20);
             btn2.setPadding(100,10,100,10);
-            btn2.setStrokeColor(ColorStateList.valueOf(context.getColor(R.color.black)));
+            btn2.setStrokeColor(ColorStateList.valueOf(context.getColor(R.color.blowfish)));
             btn2.setStrokeWidth(2);
             btn2.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             btn2.setClickable(true);
@@ -939,7 +1154,7 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
             c4.setFocusable(true);
             c4.setClickable(true);
             //  c4.setCardBackgroundColor(context.getColor(R.color.azure));
-            c4.setStrokeColor(context.getColor(R.color.azure));
+            c4.setStrokeColor(context.getColor(R.color.silver));
 
             c4.setStrokeWidth(5);
 
@@ -956,7 +1171,7 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
             c3.setFocusable(true);
             c3.setClickable(true);
             //  c3.setCardBackgroundColor(context.getColor(R.color.azure));
-            c3.setStrokeColor(context.getColor(R.color.azure));
+            c3.setStrokeColor(context.getColor(R.color.silver));
             c3.setStrokeWidth(5);
 
         }
@@ -973,13 +1188,89 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
             c2.setRadius(40);
             c2.setFocusable(true);
             c2.setClickable(true);
-            //   c2.setCardBackgroundColor(context.getColor(R.color.azure));
-            c2.setStrokeColor(context.getColor(R.color.azure));
+            //c2.setCardBackgroundColor(context.getColor(R.color.azure));
+            c2.setStrokeColor(context.getColor(R.color.silver));
             c2.setStrokeWidth(5);
 
         }
+         private void createCards() {
+          //Toast.makeText(context,"ArrayList Size"+addOnBeans.size(),Toast.LENGTH_LONG).show();
+              /*   if (addOnBeans.size() == 1) {
+                     generateCard1();
+                     l1=generateL1();
+                     l5=generateL5();
+                    // t1=generateT1(addOnBeans.get(0).getAddOnName());
+                    // t2=generateT2(addOnBeans.get(0).getAddOnPrice());
+
+                 }
+                 else if(addOnBeans.size()==2){
+                     generateCard1();
+                     generateCard2();
+                     l1=generateL1();
+                     l2=generateL2();
+                     l5=generateL5();
+                     l6=generateL6();
+                   //  t1=generateT1(addOnBeans.get(0).getAddOnName());
+                    // t2=generateT2(addOnBeans.get(0).getAddOnPrice());
+                    // t3=generateT3(addOnBeans.get(1).getAddOnName());
+                     //t4=generateT4(addOnBeans.get(1).getAddOnPrice());
+
+
+
+                 }
+                 else if(addOnBeans.size()==3){
+                     generateCard1();
+                     generateCard2();
+                     generateCard3();
+                     l1=generateL1();
+                     l2=generateL2();
+                     l3=generateL3();
+                     l4=generateL5();
+                     l6=generateL6();
+                     l7=generateL7();
+                     t1=generateT1(addOnBeans.get(0).getAddOnName());
+                     t2=generateT2(addOnBeans.get(0).getAddOnPrice());
+                     t3=generateT3(addOnBeans.get(1).getAddOnName());
+                     t4=generateT4(addOnBeans.get(1).getAddOnPrice());
+                     t5=generateT5();
+                     t6=generateT6();
+
+                 }
+                 else if(addOnBeans.size()==4){
+                     generateCard1();
+                     generateCard2();
+                     generateCard3();
+                     generateCard4();
+                     l1=generateL1();
+                     l2=generateL2();
+                     l3=generateL3();
+                     l4=generateL4();
+                     l5=generateL5();
+                     l6=generateL6();
+                     l7=generateL7();
+                     l8=generateL8();
+                     t1=generateT1(addOnBeans.get(0).getAddOnName());
+                     t2=generateT2(addOnBeans.get(0).getAddOnPrice());
+                     t3=generateT3(addOnBeans.get(1).getAddOnName());
+                     t4=generateT4(addOnBeans.get(1).getAddOnPrice());
+                     t5=generateT5();
+                     t6=generateT6();
+                     t7=generateT7();
+                     t8=generateT8();
+                 }
+                 else{
+                     System.out.println("Out");
+                 }
+
+
+
+               */
+
+         }
+
 
         private void generateCard1() {
+
 
             c1.setLayoutParams(new ViewGroup.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
@@ -992,10 +1283,14 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
             c1.setFocusable(true);
             c1.setClickable(true);
             // c1.setCardBackgroundColor(context.getColor(R.color.azure));
-            c1.setStrokeColor(context.getColor(R.color.azure));
+            c1.setStrokeColor(context.getColor(R.color.silver));
             c1.setStrokeWidth(5);
 
+
+
         }
+
+
 
         private void generateGridLayout() {
             gridLayout.setLayoutParams(new ViewGroup.LayoutParams(

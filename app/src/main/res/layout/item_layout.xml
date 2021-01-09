@@ -27,7 +27,7 @@
             android:id="@+id/prod"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="115dp"
+            android:width="170dp"
             android:text="@string/policy_no"
             android:fontFamily="@font/adamina"
             android:textColor="@color/black"
@@ -39,17 +39,9 @@
             android:layout_width="wrap_content"
             android:text="@string/policy_no"
             android:textSize="12sp"
-            android:width="160dp"
+            android:width="220dp"
             android:fontFamily="@font/adamina"
 
-            android:textColor="@color/black"/>
-        <TextView
-            android:id="@+id/status"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="@string/status"
-            android:textSize="12sp"
-            android:fontFamily="@font/adamina"
             android:textColor="@color/black"/>
 
     </LinearLayout>

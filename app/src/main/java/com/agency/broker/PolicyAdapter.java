@@ -42,7 +42,7 @@ public class PolicyAdapter extends RecyclerView.Adapter<PolicyAdapter.ViewHolder
        PolicyBean policyBean=policyBeanList.get(position);
        holder.prod.setText(policyBean.getProduct());
        holder.polNo.setText(policyBean.getPolicyNo());
-       holder.status.setText(policyBean.getStatus());
+     //  holder.status.setText(policyBean.getStatus());
 
       }
       else{
@@ -64,7 +64,7 @@ public class PolicyAdapter extends RecyclerView.Adapter<PolicyAdapter.ViewHolder
             super(itemView);
             prod=itemView.findViewById(R.id.prod);
             polNo=itemView.findViewById(R.id.polNo);
-            status=itemView.findViewById(R.id.status);
+          //  status=itemView.findViewById(R.id.status);
         }
 
         public void bind(final PolicyBean item, final OnItemClickListener listener) {
