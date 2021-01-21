@@ -12,6 +12,10 @@ import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.Objects;
 
 import retrofit2.Call;
@@ -78,7 +82,11 @@ public class QuoteDetails extends AppCompatActivity {
                         t5=findViewById(R.id.quoteExpiryValue);
                         t5.setText(response.body().getExpiry());
                         t6=findViewById(R.id.quoteAmmountValue);
-                        t6.setText(response.body().getAmmount());
+                        String p=response.body().getAmmount();
+                        double pr=Double.parseDouble(p);
+                        BigDecimal sp=BigDecimal.valueOf(pr).setScale(2, RoundingMode.CEILING);;
+                        String ph="Ksh "+ NumberFormat.getNumberInstance(Locale.US).format(sp);
+                        t6.setText(ph);
 
                     }
                 }

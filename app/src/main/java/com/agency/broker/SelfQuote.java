@@ -9,10 +9,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +25,8 @@ public class SelfQuote extends AppCompatActivity {
     TextView tv;
     RecyclerView recyclerView;
     SelfQuoteAdapter adapter;
+    MotorFormBean formBean;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +46,7 @@ public class SelfQuote extends AppCompatActivity {
         String model=i.getStringExtra("model");
         String year=i.getStringExtra("year");
         String vehicle=i.getStringExtra("vehicle");
-         MotorFormBean formBean=new MotorFormBean();
+         formBean=new MotorFormBean();
          formBean.setVehicle(vehicle);
          formBean.setModelYear(year);
          formBean.setValue(value);
@@ -63,7 +65,7 @@ public class SelfQuote extends AppCompatActivity {
         LinearLayoutManager l=new LinearLayoutManager(this);
         l.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(l);
-        adapter = new SelfQuoteAdapter(this, getList(formBean), new SelfQuoteAdapter.OnItemClickListener() {
+        adapter = new SelfQuoteAdapter(this, getList(formBean), formBean, new SelfQuoteAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(SelfQuoteBean item) {
 
@@ -77,7 +79,7 @@ public class SelfQuote extends AppCompatActivity {
         LinearLayoutManager l=new LinearLayoutManager(this);
         l.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(l);
-        adapter = new SelfQuoteAdapter(this, beans, new SelfQuoteAdapter.OnItemClickListener() {
+        adapter = new SelfQuoteAdapter(this, beans, formBean, new SelfQuoteAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(SelfQuoteBean item) {
                 new Handler().postDelayed(new Runnable() {

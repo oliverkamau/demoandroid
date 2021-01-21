@@ -8,36 +8,54 @@
     android:background="#fff"
     >
 
-    <LinearLayout
+    <RelativeLayout
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:orientation="vertical"
-
-        android:padding="10dp"
         >
-
-
-
-        <TextView
-            android:id="@+id/textassure"
-            android:layout_width="wrap_content"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/productsbuyheader"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="This will only take a few seconds"
-            android:textStyle="italic"
-            android:textColor="@color/majorBlue"
-            android:textSize="20sp"
-            android:layout_marginLeft="40dp"
-            android:drawableStart="@drawable/ic_baseline_thumb_up_24"
-            android:drawableTint="@color/majorBlue"
-            android:layout_marginTop="50dp"
-            />
+            android:clickable="false"
+            android:focusable="true"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="@color/majorBlue"
+            >
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:text="Motor Private"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/adamina"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"            />
+
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   android:layout_below="@+id/productsbuyheader"
+    android:orientation="vertical"
+
+    android:padding="10dp">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:orientation="vertical"
             android:visibility="visible"
@@ -67,9 +85,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:hintTextColor="#1F3FFA"
-                android:background="@color/honeyDew"
+                android:background="@color/azure"
                 app:hintEnabled="false"
-                android:backgroundTint="#fff"
+                android:backgroundTint="@color/azure"
                 app:startIconDrawable="@drawable/verified"
                 app:startIconTint="#1F3FFA"
                 >
@@ -109,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:hint="KCP 096Y"
                 app:hintTextColor="#1F3FFA"
-                android:background="#fff"
+                android:background="@color/azure"
                 app:boxStrokeColor="#1F3FFA"
                 app:hintEnabled="false"
 
@@ -133,6 +151,7 @@
                 android:textStyle="italic"
                 android:textColor="@color/black"
                 android:textSize="15sp"
+
                 android:layout_marginTop="20dp"
                 />
 
@@ -148,7 +167,7 @@
                 android:layout_height="wrap_content"
                 android:hint="TOYOTA, NISSAN"
                 app:hintTextColor="#1F3FFA"
-                android:background="#fff"
+                android:background="@color/azure"
                 app:boxStrokeColor="#1F3FFA"
                 app:hintEnabled="false"
 
@@ -187,7 +206,7 @@
                 android:layout_height="wrap_content"
                 android:hint=""
                 app:hintTextColor="#1F3FFA"
-                android:background="#fff"
+                android:background="@color/azure"
                 app:boxStrokeColor="#1F3FFA"
                 app:hintEnabled="false"
 
@@ -225,7 +244,7 @@
                 android:layout_height="wrap_content"
                 android:hint=""
                 app:hintTextColor="#1F3FFA"
-                android:background="#fff"
+                android:background="@color/azure"
                 app:boxStrokeColor="#1F3FFA"
                 app:hintEnabled="false"
 
@@ -260,11 +279,12 @@
                 app:boxCornerRadiusBottomStart="5dp"
                 app:boxCornerRadiusBottomEnd="5dp"
                 android:id="@+id/market"
+                android:inputType="number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint=""
                 app:hintTextColor="#1F3FFA"
-                android:background="#fff"
+                android:background="@color/azure"
                 app:boxStrokeColor="#1F3FFA"
                 app:hintEnabled="false"
 
@@ -305,7 +325,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 app:hintTextColor="#1F3FFA"
-                android:background="#fff"
+                android:background="@color/azure"
                 app:boxStrokeColor="#1F3FFA"
                 app:hintEnabled="false"
                 app:endIconDrawable="@drawable/calendar"
@@ -327,7 +347,7 @@
                 android:id="@+id/covlength"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="FOR HOW MANY MONTHS DO YOU WISH TO BE COVERED?"
+                android:text="FOR HOW LONG DO YOU WISH TO BE COVERED?"
                 android:textStyle="italic"
                 android:textColor="@color/black"
                 android:textSize="15sp"
@@ -341,23 +361,26 @@
                 app:boxCornerRadiusTopEnd="5dp"
                 app:boxCornerRadiusBottomStart="5dp"
                 app:boxCornerRadiusBottomEnd="5dp"
-                android:id="@+id/lengthcover"
+                android:id="@+id/yearto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint=""
+                android:clickable="true"
+                android:focusable="true"
                 app:hintTextColor="#1F3FFA"
-                android:background="#fff"
+                android:background="@color/azure"
                 app:boxStrokeColor="#1F3FFA"
-
                 app:hintEnabled="false"
-
+                app:endIconDrawable="@drawable/calendar"
+                app:endIconMode="custom"
+                app:endIconTint="@color/colorAccent"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/coverlength"
+                    android:id="@+id/toyear"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="3"
+                    android:hint="26/01/2022"
                     >
 
                 </com.google.android.material.textfield.TextInputEditText>
@@ -376,7 +399,7 @@
 
         </LinearLayout>
 
-
-    </LinearLayout>
+</LinearLayout>
+    </RelativeLayout>
 
 </androidx.core.widget.NestedScrollView>

@@ -9,7 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 public class ReceiptAdapter extends RecyclerView.Adapter<ReceiptAdapter.ViewHolder>{
 
@@ -35,7 +37,10 @@ public class ReceiptAdapter extends RecyclerView.Adapter<ReceiptAdapter.ViewHold
             ReceiptBean receiptBean=receiptBeans.get(position);
             holder.receipt.setText(receiptBean.getReceiptNo());
             holder.ref.setText(receiptBean.getRefNo());
-            holder.ammount.setText(receiptBean.getAmmount());
+            String sum=receiptBean.getAmmount();
+            Double s=Double.parseDouble(sum);
+            String h="Ksh "+NumberFormat.getNumberInstance(Locale.US).format(s);
+            holder.ammount.setText(h);
             holder.date.setText(receiptBean.getDatePaid());
             holder.dc.setText(receiptBean.getDebitCredit());
 

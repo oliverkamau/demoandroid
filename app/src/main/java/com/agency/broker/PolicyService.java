@@ -31,9 +31,15 @@ public interface PolicyService {
     @POST("selfquotes")
     Call<List<SelfQuoteBean>> selfqouotes(@Header("Authorization") String header,@Body MotorFormBean formBean);
 
+    @POST("buyInsurance")
+    Call<ResponseBean> selfMessage(@Header("Authorization") String header,@Body BuyInsuranceBean insuranceBean);
+
     @GET("countQuotes/{cover}")
     Call<QuoteCount> countQuotes(@Header("Authorization") String header,@Path("cover") String cover);
 
     @GET("selfquotedetails/{code}")
     Call<List<SelfQuoteDetailsBean>> selfquotedetails(@Header("Authorization") String header,@Path("code") Long code);
+
+    @POST("createTransaction")
+    Call<ResponseBean> mpesaCall(@Body MpesaCall mpesaCall);
 }

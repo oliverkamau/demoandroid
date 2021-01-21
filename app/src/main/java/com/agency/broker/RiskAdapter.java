@@ -9,7 +9,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 public class RiskAdapter extends RecyclerView.Adapter<RiskAdapter.ViewHolder>{
 
@@ -35,8 +39,19 @@ public class RiskAdapter extends RecyclerView.Adapter<RiskAdapter.ViewHolder>{
             RiskBean riskBean=riskBeanList.get(position);
             holder.riskid.setText(riskBean.getRiskDesc());
             holder.desc.setText(riskBean.getDescription());
-            holder.prem.setText(riskBean.getPremium());
-            holder.sum.setText(riskBean.getSumInsured());
+            String sum=riskBean.getPremium();
+            double s=Double.parseDouble(sum);
+            BigDecimal st=BigDecimal.valueOf(s).setScale(2, RoundingMode.CEILING);;
+            String h="Ksh "+ NumberFormat.getNumberInstance(Locale.US).format(st);
+            holder.prem.setText(h);
+
+
+            String p=riskBean.getSumInsured();
+            double pr=Double.parseDouble(p);
+            BigDecimal sp=BigDecimal.valueOf(pr).setScale(2, RoundingMode.CEILING);;
+            String ph="Ksh "+ NumberFormat.getNumberInstance(Locale.US).format(sp);
+
+            holder.sum.setText(ph);
 
         }
         else{

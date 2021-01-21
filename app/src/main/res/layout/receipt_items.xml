@@ -14,6 +14,187 @@
         app:cardElevation="10dp"
         app:strokeWidth="5dp"
         app:strokeColor="@color/aliceBlue">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/khanname"
+            android:layout_marginTop="20dp"
+            android:columnCount="2"
+            android:rowCount="3"
+            android:layout_margin="10dp"
+            >
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="0"
+                android:layout_column="0"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Receipt No."
+                    android:fontFamily="@font/adamina"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_margin="2dp"/>
+
+                <TextView
+                    android:id="@+id/receipt_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/adamina"
+                    android:textColor="@color/blowfish"
+                    android:textSize="13sp"
+                    android:layout_margin="2dp"
+
+                />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="0"
+                android:layout_column="1"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reference No"
+                    android:fontFamily="@font/adamina"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_margin="2dp"/>
+
+                <TextView
+                    android:id="@+id/reference_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/adamina"
+                    android:textColor="@color/blowfish"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="1"
+                android:layout_column="0"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ammount Paid"
+                    android:fontFamily="@font/adamina"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_margin="2dp"/>
+
+                <TextView
+                    android:id="@+id/ammount_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/adamina"
+                    android:textColor="@color/blowfish"
+                    android:textSize="13sp"
+                    android:layout_margin="2dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="1"
+                android:layout_column="1"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Payment Date"
+                    android:fontFamily="@font/adamina"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_margin="2dp"/>
+
+                <TextView
+                    android:id="@+id/date_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/adamina"
+                    android:textColor="@color/blowfish"
+                    android:textSize="13sp"
+                    android:layout_margin="2dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="2"
+                android:layout_column="0"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transaction Type"
+                    android:fontFamily="@font/adamina"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_margin="2dp"/>
+
+                <TextView
+                    android:id="@+id/dc_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/adamina"
+                    android:textColor="@color/blowfish"
+                    android:textSize="13sp"
+                    android:layout_margin="2dp"/>
+
+            </LinearLayout>
+
+        </GridLayout>
+
+        <!--
 <LinearLayout
     android:orientation="horizontal"
     android:layout_width="match_parent"
@@ -67,6 +248,7 @@
         android:textSize="12sp" />
 
 </LinearLayout>
+-->
     </com.google.android.material.card.MaterialCardView>
 </RelativeLayout>
 <!--

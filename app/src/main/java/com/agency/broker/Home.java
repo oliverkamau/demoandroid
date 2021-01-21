@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class  Home extends AppCompatActivity {
      TextView name,policies,quotes,expired;
-      CardView cardView,cardView2,covers,serv;
+      CardView cardView,cardView2,covers,serv,topay;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +26,7 @@ public class  Home extends AppCompatActivity {
         policies=findViewById(R.id.total);
         quotes=findViewById(R.id.expiredpol);
         expired=findViewById(R.id.quotesval);
+
         if(intent.getExtras()!=null){
          //String loggedUser=intent.getStringExtra("name");
          String total=intent.getStringExtra("policies");
@@ -41,6 +42,7 @@ public class  Home extends AppCompatActivity {
         cardView2=findViewById(R.id.quotescard);
         covers=findViewById(R.id.covers);
         serv=findViewById(R.id.serv);
+        topay=findViewById(R.id.topay);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +50,16 @@ public class  Home extends AppCompatActivity {
                     @Override
                     public void run() {
                         startActivity(new Intent(Home.this,Policies.class));
+                    }
+                },1000);            }
+        });
+        topay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(Home.this,PaymentMethod.class));
                     }
                 },1000);            }
         });

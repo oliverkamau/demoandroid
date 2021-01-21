@@ -6,20 +6,320 @@
     android:layout_height="match_parent"
     tools:context=".QuoteDetails"
     >
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/productsbuyheader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:focusable="true"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="@color/majorBlue"
+        >
+        <LinearLayout
 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:text="Quote Details"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/adamina"
+                android:textAlignment="center"
+                android:textColor="@color/white"            />
+
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/quoteDetailsCard"
-        android:layout_height="300dp"
+        android:layout_below="@id/productsbuyheader"
+        android:layout_height="250dp"
         android:layout_width="match_parent"
         android:layout_gravity="fill"
         android:padding="10dp"
         android:clickable="true"
         android:focusable="true"
         app:cardElevation="10dp"
-        app:strokeWidth="10dp"
+        app:strokeWidth="5dp"
         android:layout_margin="10dp"
         app:strokeColor="@color/aliceBlue">
 
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/khanname"
+            android:rowCount="4"
+            android:layout_margin="10dp"
+            >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_row="0"
+            android:layout_column="0"
+            >
+            <TextView
+                android:id="@+id/quoteproduct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:fontFamily="@font/adamina"
+                android:text="@string/product"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:layout_margin="2dp"
+                />
+
+            <TextView
+                android:id="@+id/quoteprodvalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textColor="@color/blowfish"
+                android:fontFamily="@font/adamina"
+                android:textSize="14sp"
+                android:layout_margin="2dp"
+
+                />
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="0"
+                android:layout_column="1"
+                >
+
+                <TextView
+                    android:id="@+id/quoteNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:fontFamily="@font/adamina"
+                    android:text="Quote No"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    android:layout_margin="2dp"
+                    />
+
+                <TextView
+                    android:id="@+id/quoteNoValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:text=""
+                    android:textColor="@color/blowfish"
+                    android:fontFamily="@font/adamina"
+                    android:textSize="14sp"
+                    android:layout_margin="2dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="1"
+                android:layout_column="0"
+                >
+
+                <TextView
+                    android:id="@+id/quoteStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:fontFamily="@font/adamina"
+                    android:text="@string/status"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    android:layout_margin="2dp"
+                    />
+
+                <TextView
+                    android:id="@+id/statusValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:text=""
+                    android:textColor="@color/blowfish"
+                    android:fontFamily="@font/adamina"
+                    android:textSize="14sp"
+                    android:layout_margin="2dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="1"
+                android:layout_column="1"
+                >
+                <TextView
+                    android:id="@+id/quoteFrom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:fontFamily="@font/adamina"
+                    android:text="Cover From"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    android:layout_margin="2dp"
+                    />
+
+                <TextView
+                    android:id="@+id/fromValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_gravity="fill"
+                    android:text=""
+                    android:textColor="@color/blowfish"
+                    android:fontFamily="@font/adamina"
+                    android:textSize="14sp"
+                    android:layout_margin="2dp"
+                    />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="2"
+                android:layout_column="0"
+                >
+
+                <TextView
+                    android:id="@+id/quoteTo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:fontFamily="@font/adamina"
+                    android:text="Cover To"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    android:layout_margin="2dp"
+                    />
+
+                <TextView
+                    android:id="@+id/quoteToValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:text=""
+                    android:textColor="@color/blowfish"
+                    android:fontFamily="@font/adamina"
+                    android:textSize="14sp"
+                    android:layout_margin="2dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="2"
+                android:layout_column="1"
+                >
+
+                <TextView
+                    android:id="@+id/quoteExpiry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:fontFamily="@font/adamina"
+                    android:text="@string/expiry"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    android:layout_margin="2dp"
+                    />
+
+                <TextView
+                    android:id="@+id/quoteExpiryValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:text=""
+                    android:textColor="@color/blowfish"
+                    android:fontFamily="@font/adamina"
+                    android:textSize="14sp"
+                    android:layout_margin="2dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="3"
+                android:layout_column="0"
+                >
+
+                <TextView
+                    android:id="@+id/quoteAmmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:fontFamily="@font/adamina"
+                    android:text="@string/ammount"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    android:layout_margin="2dp"
+                    />
+
+                <TextView
+                    android:id="@+id/quoteAmmountValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:text=""
+                    android:textColor="@color/blowfish"
+                    android:fontFamily="@font/adamina"
+                    android:textSize="14sp"
+                    android:layout_margin="2dp"
+                    />
+
+            </LinearLayout>
+
+        </GridLayout>
+<!--
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -257,6 +557,7 @@
             />
     </LinearLayout>
     </LinearLayout>
+    -->
     </com.google.android.material.card.MaterialCardView>
 
     <LinearLayout

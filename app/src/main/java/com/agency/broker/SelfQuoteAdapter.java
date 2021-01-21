@@ -1,7 +1,10 @@
 package com.agency.broker;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,17 +12,25 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
+import com.muddzdev.styleabletoast.StyleableToast;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.ViewHolder>{
@@ -28,17 +39,17 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
     GridLayout gridLayout;
     Context context;
     List<SelfQuoteBean> selfQuoteBeans;
-    List<AddOnBean> addOnBeans;
+    private MotorFormBean formBean;
     private final OnItemClickListener listener;
-
 
     public interface OnItemClickListener {
         void onItemClick(SelfQuoteBean item);
     }
 
-    public SelfQuoteAdapter(Context context, List<SelfQuoteBean> selfQuoteBeans, OnItemClickListener listener) {
+    public SelfQuoteAdapter(Context context, List<SelfQuoteBean> selfQuoteBeans, MotorFormBean formBean, OnItemClickListener listener) {
         this.context = context;
         this.selfQuoteBeans = selfQuoteBeans;
+        this.formBean = formBean;
         this.listener = listener;
     }
     @NonNull
@@ -209,21 +220,22 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
                    // premium=premium.substring(0, premium.indexOf(' '));
                     premium=premium.substring(premium.lastIndexOf(" ") + 1);
                     premium=premium.substring(0, premium.indexOf('.'));
-                   premium=premium.replaceAll(",","");
+                    premium=premium.replaceAll(",","");
                     BigDecimal prem=BigDecimal.valueOf(Long.parseLong(premium));
                     BigDecimal a=BigDecimal.valueOf(Long.parseLong(addOn));
                     prem=prem.add(a);
                     if(t2.getText().toString().contains("-")){
                     String num="Ksh "+NumberFormat.getNumberInstance(Locale.US).format(prem)+".00";
+                        addOn=addOn.replace("-","");
                         t10.setText(num);
-                        t2.setText(String.format("Ksh 200"));
+                        t2.setText(String.format("Ksh "+addOn));
                         c1.setCardBackgroundColor(context.getColor(R.color.white));
                         t2.setTextColor(context.getColor(R.color.silver));
                     }
                     else{
                         String num="Ksh "+NumberFormat.getNumberInstance(Locale.US).format(prem)+".00";
                         t10.setText(num);
-                        t2.setText(String.format("Ksh -200"));
+                        t2.setText(String.format("Ksh -"+addOn));
                         c1.setCardBackgroundColor(context.getColor(R.color.azure));
                         t2.setTextColor(context.getColor(R.color.honeyDew));
                     }
@@ -246,8 +258,9 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
                     prem=prem.add(a);
                     if(t8.getText().toString().contains("-")){
                         String num="Ksh "+NumberFormat.getNumberInstance(Locale.US).format(prem)+".00";
+                        addOn=addOn.replace("-","");
                         t10.setText(num);
-                        t8.setText(String.format("Ksh 500"));
+                        t8.setText(String.format("Ksh "+addOn));
                         c4.setCardBackgroundColor(context.getColor(R.color.white));
                         t8.setTextColor(context.getColor(R.color.silver));
                         t8.setTextSize(11);
@@ -255,7 +268,7 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
                     else{
                         String num="Ksh "+NumberFormat.getNumberInstance(Locale.US).format(prem)+".00";
                         t10.setText(num);
-                        t8.setText(String.format("Ksh -500"));
+                        t8.setText(String.format("Ksh -"+addOn));
                         c4.setCardBackgroundColor(context.getColor(R.color.azure));
                         t8.setTextColor(context.getColor(R.color.honeyDew));
                         t8.setTextSize(11);
@@ -278,8 +291,9 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
                     prem=prem.add(a);
                     if(t4.getText().toString().contains("-")){
                         String num="Ksh "+NumberFormat.getNumberInstance(Locale.US).format(prem)+".00";
+                        addOn=addOn.replace("-","");
                         t10.setText(num);
-                        t4.setText(String.format("Ksh 300"));
+                        t4.setText(String.format("Ksh "+addOn));
                         c2.setCardBackgroundColor(context.getColor(R.color.white));
                         t4.setTextColor(context.getColor(R.color.silver));
                         t4.setTextSize(11);
@@ -287,7 +301,7 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
                     else{
                         String num="Ksh "+NumberFormat.getNumberInstance(Locale.US).format(prem)+".00";
                         t10.setText(num);
-                        t4.setText(String.format("Ksh -300"));
+                        t4.setText(String.format("Ksh -"+addOn));
                         c2.setCardBackgroundColor(context.getColor(R.color.azure));
                         t4.setTextColor(context.getColor(R.color.honeyDew));
                         t4.setTextSize(11);
@@ -310,8 +324,9 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
                     prem=prem.add(a);
                     if(t6.getText().toString().contains("-")){
                         String num="Ksh "+NumberFormat.getNumberInstance(Locale.US).format(prem)+".00";
+                        addOn=addOn.replace("-","");
                         t10.setText(num);
-                        t6.setText(String.format("Ksh 450"));
+                        t6.setText(String.format("Ksh "+addOn));
                         c3.setCardBackgroundColor(context.getColor(R.color.white));
                         t6.setTextColor(context.getColor(R.color.silver));
                         t6.setTextSize(11);
@@ -320,7 +335,7 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
                         String num="Ksh "+NumberFormat.getNumberInstance(Locale.US).format(prem)+".00";
 
                         t10.setText(num);
-                        t6.setText(String.format("Ksh -450"));
+                        t6.setText(String.format("Ksh -"+addOn));
                         c3.setCardBackgroundColor(context.getColor(R.color.azure));
                         t6.setTextColor(context.getColor(R.color.honeyDew));
                         t6.setTextSize(11);
@@ -336,6 +351,14 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
                     getButtonClick();
 
 
+                }
+            });
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                 btn2.setVisibility(View.GONE);
+
+                    buyInsurance();
                 }
             });
             btn3.setOnClickListener(v1 -> {
@@ -368,6 +391,76 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
                //  iconlinear.addView(btn);
 
             });
+        }
+
+        private void buyInsurance() {
+
+            BuyInsuranceBean buyInsuranceBean=new BuyInsuranceBean();
+            buyInsuranceBean.setValue(formBean.getValue());
+            buyInsuranceBean.setAndroidPol("Yes");
+            buyInsuranceBean.setCover(formBean.getCover());
+            buyInsuranceBean.setCoverLength(formBean.getCoverLength());
+            buyInsuranceBean.setEngine(formBean.getEngine());
+            buyInsuranceBean.setModel(formBean.getModel());
+            buyInsuranceBean.setModelYear(formBean.getModelYear());
+            buyInsuranceBean.setVehicle(formBean.getVehicle());
+            buyInsuranceBean.setStartDate(formBean.getStartDate());
+            buyInsuranceBean.setPremium(t10.getText().toString());
+            buyInsuranceBean.setBinder(mypriv.getText().toString());
+            buyInsuranceBean.setCompany(insurance.getText().toString());
+
+            SharedPreferences sharedPreferences = context.getSharedPreferences("insurance", Context.MODE_PRIVATE);
+           // String token = sharedPreferences.getString("token", "token");
+            Long clid = sharedPreferences.getLong("client", 0);
+            buyInsuranceBean.setClientId(clid);
+
+            /*
+            token = "Bearer " + token;
+            Call<ResponseBean> loginResponseCall=ApiClient.getPolicyService()
+                    .selfMessage(token,buyInsuranceBean);
+            loginResponseCall.enqueue(new Callback<ResponseBean>() {
+                @Override
+                public void onResponse(@NotNull Call<ResponseBean> call, @NotNull Response<ResponseBean> response) {
+                    if(response.isSuccessful()){
+
+ */
+
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent i=new Intent(context,PaymentMethod.class);
+
+                                i.putExtra("cover",buyInsuranceBean.getCover());
+                                i.putExtra("period", buyInsuranceBean.getCoverLength());
+                                i.putExtra("startDate",buyInsuranceBean.getStartDate());
+                                i.putExtra("engine",buyInsuranceBean.getEngine());
+                                i.putExtra("value",buyInsuranceBean.getValue());
+                                i.putExtra("model",buyInsuranceBean.getModel());
+                                i.putExtra("year",buyInsuranceBean.getModelYear());
+                                i.putExtra("vehicle",buyInsuranceBean.getVehicle());
+                                i.putExtra("premium",buyInsuranceBean.getPremium());
+                                i.putExtra("binder",buyInsuranceBean.getBinder());
+                                i.putExtra("company",buyInsuranceBean.getCompany());
+                                i.putExtra("client",buyInsuranceBean.getClientId());
+                                i.putExtra("android",buyInsuranceBean.getAndroidPol());
+
+                                context.startActivity(i);
+                            }
+                        },1000);
+
+                   /* }
+                    else {
+                        StyleableToast.makeText(context, "Policy precessing failed contact the Agency!", R.style.mytoast).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<ResponseBean> call, Throwable t) {
+                    Toast.makeText(context,"Throwable "+t.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
+
+                }
+
+                    */
         }
 
         private void getButtonClick() {
@@ -430,7 +523,7 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
 
 
             generateGridLayout();
-            createCards();
+            //createCards();
             /*
             generateCard1();
 
@@ -1193,80 +1286,7 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
             c2.setStrokeWidth(5);
 
         }
-         private void createCards() {
-          //Toast.makeText(context,"ArrayList Size"+addOnBeans.size(),Toast.LENGTH_LONG).show();
-              /*   if (addOnBeans.size() == 1) {
-                     generateCard1();
-                     l1=generateL1();
-                     l5=generateL5();
-                    // t1=generateT1(addOnBeans.get(0).getAddOnName());
-                    // t2=generateT2(addOnBeans.get(0).getAddOnPrice());
 
-                 }
-                 else if(addOnBeans.size()==2){
-                     generateCard1();
-                     generateCard2();
-                     l1=generateL1();
-                     l2=generateL2();
-                     l5=generateL5();
-                     l6=generateL6();
-                   //  t1=generateT1(addOnBeans.get(0).getAddOnName());
-                    // t2=generateT2(addOnBeans.get(0).getAddOnPrice());
-                    // t3=generateT3(addOnBeans.get(1).getAddOnName());
-                     //t4=generateT4(addOnBeans.get(1).getAddOnPrice());
-
-
-
-                 }
-                 else if(addOnBeans.size()==3){
-                     generateCard1();
-                     generateCard2();
-                     generateCard3();
-                     l1=generateL1();
-                     l2=generateL2();
-                     l3=generateL3();
-                     l4=generateL5();
-                     l6=generateL6();
-                     l7=generateL7();
-                     t1=generateT1(addOnBeans.get(0).getAddOnName());
-                     t2=generateT2(addOnBeans.get(0).getAddOnPrice());
-                     t3=generateT3(addOnBeans.get(1).getAddOnName());
-                     t4=generateT4(addOnBeans.get(1).getAddOnPrice());
-                     t5=generateT5();
-                     t6=generateT6();
-
-                 }
-                 else if(addOnBeans.size()==4){
-                     generateCard1();
-                     generateCard2();
-                     generateCard3();
-                     generateCard4();
-                     l1=generateL1();
-                     l2=generateL2();
-                     l3=generateL3();
-                     l4=generateL4();
-                     l5=generateL5();
-                     l6=generateL6();
-                     l7=generateL7();
-                     l8=generateL8();
-                     t1=generateT1(addOnBeans.get(0).getAddOnName());
-                     t2=generateT2(addOnBeans.get(0).getAddOnPrice());
-                     t3=generateT3(addOnBeans.get(1).getAddOnName());
-                     t4=generateT4(addOnBeans.get(1).getAddOnPrice());
-                     t5=generateT5();
-                     t6=generateT6();
-                     t7=generateT7();
-                     t8=generateT8();
-                 }
-                 else{
-                     System.out.println("Out");
-                 }
-
-
-
-               */
-
-         }
 
 
         private void generateCard1() {

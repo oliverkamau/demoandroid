@@ -10,13 +10,11 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/selfquoteheader"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
+        android:layout_height="wrap_content"
         android:clickable="false"
         android:focusable="true"
         app:cardElevation="10dp"
-        app:strokeWidth="5dp"
         app:cardBackgroundColor="@color/majorBlue"
-        app:strokeColor="@color/blowfish"
         >
     <LinearLayout
 

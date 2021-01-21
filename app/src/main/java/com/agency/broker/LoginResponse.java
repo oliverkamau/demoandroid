@@ -22,6 +22,16 @@ public class LoginResponse {
 
     private Integer quotes;
 
+    private String phone;
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public Integer getExpired() {
         return expired;
     }

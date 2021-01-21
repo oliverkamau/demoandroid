@@ -12,7 +12,11 @@ import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 import retrofit2.Call;
@@ -81,7 +85,13 @@ public class PolicyDetails extends AppCompatActivity {
                        t5=findViewById(R.id.textView19);
                        t5.setText(response.body().getRenewalDate());
                        t6=findViewById(R.id.textView21);
-                       t6.setText(response.body().getBalance());
+
+                        String p=response.body().getBalance();
+                        double pr=Double.parseDouble(p);
+                        BigDecimal sp=BigDecimal.valueOf(pr).setScale(2, RoundingMode.CEILING);;
+                        String ph="Ksh "+ NumberFormat.getNumberInstance(Locale.US).format(sp);
+
+                       t6.setText(ph);
                        t7=findViewById(R.id.prodvalue);
                        t7.setText(response.body().getProduct());
                     }

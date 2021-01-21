@@ -19,7 +19,7 @@ public class ApiClient {
                 .build();
         return new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("http://192.168.43.146:8082/")
+                .baseUrl("https://255dc3c26ebd.ngrok.io/")
                 .client(client)
                 .build();
     }

@@ -14,6 +14,151 @@
         app:cardElevation="10dp"
         app:strokeWidth="5dp"
         app:strokeColor="@color/aliceBlue">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/khanname"
+            android:layout_marginTop="20dp"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:layout_margin="10dp"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="0"
+                android:layout_column="0"
+
+                >
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Risk"
+                    android:fontFamily="@font/adamina"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_margin="2dp"/>
+                <TextView
+                    android:id="@+id/risk_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/adamina"
+                    android:textColor="@color/blowfish"
+                    android:layout_margin="2dp"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="0"
+                android:layout_column="1"
+
+                >
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description"
+                    android:fontFamily="@font/adamina"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_margin="2dp"/>
+
+                <TextView
+                    android:id="@+id/desc_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/adamina"
+                    android:textColor="@color/blowfish"
+                    android:textSize="13sp"
+                    android:layout_margin="2dp"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="1"
+                android:layout_column="0"
+
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sum Insured"
+                    android:fontFamily="@font/adamina"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_margin="2dp"/>
+
+                <TextView
+                    android:id="@+id/sum_insured"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/adamina"
+                    android:textColor="@color/blowfish"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_row="1"
+                android:layout_column="1"
+
+                >
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Premium"
+                    android:fontFamily="@font/adamina"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_margin="2dp"/>
+
+                <TextView
+                    android:id="@+id/prem_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/adamina"
+                    android:textColor="@color/blowfish"
+                    android:textSize="13sp" />
+
+
+            </LinearLayout>
+
+
+
+
+        </GridLayout>
+        <!--
 <LinearLayout
     android:orientation="horizontal"
     android:layout_width="match_parent"
@@ -57,5 +202,6 @@
         android:textColor="@color/black"
         android:textSize="12sp" />
 </LinearLayout>
+-->
     </com.google.android.material.card.MaterialCardView>
 </RelativeLayout>

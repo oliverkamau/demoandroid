@@ -1,6 +1,6 @@
 package com.agency.broker;
 
-public class Response {
+public class ResponseBean {
 
     private String message;
 

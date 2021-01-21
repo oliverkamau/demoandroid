@@ -7,6 +7,8 @@
     android:ellipsize="end"
     android:maxLines="1"
     android:padding="16dp"
+    android:backgroundTint="@color/azure"
+    android:textColor="@color/black"
   >
 
 </TextView>

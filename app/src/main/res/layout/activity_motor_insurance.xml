@@ -17,14 +17,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_margin="5dp"
     android:background="@color/majorBlue">
 
     <TextView
         android:id="@+id/userfriend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
+        android:layout_marginStart="130dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/amarante"
         android:drawableLeft="@drawable/ic_baseline_emoji_people_24"
@@ -33,31 +32,14 @@
         android:textSize="18sp"
         android:drawableTint="@color/white"/>
 
-    <TextView
-        android:id="@+id/userfriend1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:fontFamily="@font/amarante"
-        android:text="Below are our various motor products lets get started,"
-        android:textColor="@color/white"
-        android:textSize="14sp" />
 
-    <TextView
-        android:id="@+id/userfriend2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:fontFamily="@font/amarante"
-        android:text="proceed to select the type of vehicle you want insured"
-        android:textColor="@color/white"
-        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/userfriend3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:textAlignment="center"
         android:fontFamily="@font/amarante"
         android:text="We got you covered in a click!"
         android:textColor="@color/white"

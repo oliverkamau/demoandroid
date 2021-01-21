@@ -27,6 +27,8 @@ public class Login extends AppCompatActivity {
     public static final String CLIENT_STORAGE = "insurance";
     public static final String CL_ID = "client";
     public static final String ACCESS_TOKEN= "token";
+    public static final String PHONE_NUMBER= "phone";
+            ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +59,7 @@ public class Login extends AppCompatActivity {
                     assert response.body() != null;
                     editor.putLong(CL_ID,response.body().getClientId());
                     editor.putString(ACCESS_TOKEN,response.body().getJwt());
+                    editor.putString(PHONE_NUMBER,response.body().getPhone());
                     editor.apply();
                     new Handler().postDelayed(new Runnable() {
                         @Override
