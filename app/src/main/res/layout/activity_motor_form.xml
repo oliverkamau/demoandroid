@@ -9,7 +9,7 @@
     >
 
     <RelativeLayout
-
+        android:id="@+id/relativemotorForm"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
@@ -44,16 +44,32 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
+
+        <ImageView
+            android:layout_below="@id/productsbuyheader"
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="150dp"
+            android:src="@drawable/loading"
+            android:visibility="gone"
+            android:contentDescription="Please Wait" />
+
+
 <LinearLayout
+    android:id="@+id/lineargone"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
    android:layout_below="@+id/productsbuyheader"
     android:orientation="vertical"
-
+android:visibility="visible"
     android:padding="10dp">
 
 
+
+
         <LinearLayout
+            android:id="@+id/motorlinearparent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="20dp"

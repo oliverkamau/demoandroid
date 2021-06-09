@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    android:id="@+id/parentrelative"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -36,6 +38,17 @@
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <ImageView
+        android:layout_below="@id/productsbuyheader"
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="150dp"
+        android:src="@drawable/loading"
+        android:visibility="gone"
+        android:contentDescription="Please Wait" />
+
     <LinearLayout
         android:id="@+id/linearpay"
         android:layout_below="@+id/productsbuyheader"

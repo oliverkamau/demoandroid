@@ -2,9 +2,11 @@ package com.agency.broker;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,6 +18,9 @@ import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.material.datepicker.MaterialDatePicker;
@@ -46,6 +51,11 @@ public class MotorForm extends AppCompatActivity {
     Button button;
     TextInputEditText textInputEditText,engine,year,vehicle,model,value,period,yearto;
     AutoCompleteTextView autoCompleteTextView;
+    RelativeLayout relativeLayout;
+    AnimationDrawable animation;
+    ImageView image;
+    LinearLayout lineargone;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +78,14 @@ public class MotorForm extends AppCompatActivity {
         engine=findViewById(R.id.enginecapacity);
         year=findViewById(R.id.manufactureyear);
         yearto=findViewById(R.id.toyear);
+        relativeLayout=findViewById(R.id.relativemotorForm);
+        lineargone=findViewById(R.id.lineargone);
+        image=findViewById(R.id.imageView);
+        animation=(AnimationDrawable)image.getDrawable();
+
+        image.setVisibility(View.GONE);
+        lineargone.setVisibility(View.VISIBLE);
+
 
         value.addTextChangedListener(onTextChangedListener());
         MaterialDatePicker.Builder material= MaterialDatePicker.Builder.datePicker();
@@ -140,6 +158,10 @@ public class MotorForm extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                relativeLayout.setBackgroundColor(getColor(R.color.whiteSmoke));
+                lineargone.setVisibility(View.GONE);
+                image.setVisibility(View.VISIBLE);
+                animation.start();
                 MotorFormBean motorFormBean=new MotorFormBean();
                 motorFormBean.setCover(autoCompleteTextView.getText().toString());
                 motorFormBean.setCoverLength(yearto.getText().toString());
@@ -250,9 +272,14 @@ public class MotorForm extends AppCompatActivity {
                             i.putExtra("model",motorFormBean.getModel());
                             i.putExtra("year",motorFormBean.getModelYear());
                             i.putExtra("vehicle",motorFormBean.getVehicle());
+                            animation.stop();
+                          //  image.setVisibility(View.GONE);
+                            relativeLayout.setBackgroundColor(getColor(R.color.white));
+                           // lineargone.setVisibility(View.VISIBLE);
                             startActivity(i);
+
                         }
-                    },1000);
+                    },10);
 
                 }
                 else {

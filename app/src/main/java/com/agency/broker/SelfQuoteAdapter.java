@@ -4,13 +4,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,6 +45,7 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
     List<SelfQuoteBean> selfQuoteBeans;
     private MotorFormBean formBean;
     private final OnItemClickListener listener;
+
 
     public interface OnItemClickListener {
         void onItemClick(SelfQuoteBean item);
@@ -174,7 +179,9 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
         TextView insurance,sum,premium,mypriv,underwriter,cover,coverval,myprem;
            Button btn;
            MaterialButton btn2,btn3;
-          MaterialCardView c1,c2,c3,c4,c5,c6,c7,c8;
+        //ImageView imageView;
+        AnimationDrawable drawable;
+        MaterialCardView c1,c2,c3,c4,c5,c6,c7,c8;
         LinearLayout iconlinear,replacer,parentlinear,linearLayout,motherlayout,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12;
         TextView t,t0,t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,tin,tin2,tin3,tin4,tin5,tin6,tin7,tin8,tin9,tin10;
         public ViewHolder(@NonNull View itemView) {
@@ -197,6 +204,8 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
             btn3=new MaterialButton(context);
             gridLayout=new GridLayout(context);
             t=new TextView(context);
+           // imageView=generateImageView();
+
 
             t0=new TextView(context);
             btn2=new MaterialButton(context);
@@ -210,6 +219,11 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
             c8=new MaterialCardView(context);
             t2=new TextView(context);
 
+            //imageView.setVisibility(View.GONE);
+            t0.setVisibility(View.VISIBLE);
+            t.setVisibility(View.VISIBLE);
+            gridLayout.setVisibility(View.VISIBLE);
+            btn2.setVisibility(View.VISIBLE);
 
             c1.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
@@ -356,8 +370,14 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
             btn2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                 btn2.setVisibility(View.GONE);
-
+                   // parentlinear.setBackgroundColor(context.getColor(R.color.whiteSmoke));
+                 //btn2.setVisibility(View.GONE);
+                // gridLayout.setVisibility(View.GONE);
+//                 t.setVisibility(View.GONE);
+//                 t0.setVisibility(View.GONE);
+//                  imageView.setVisibility(View.VISIBLE);
+//                  drawable=(AnimationDrawable)imageView.getDrawable();
+//                  drawable.start();
                     buyInsurance();
                 }
             });
@@ -443,10 +463,21 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
                                 i.putExtra("company",buyInsuranceBean.getCompany());
                                 i.putExtra("client",buyInsuranceBean.getClientId());
                                 i.putExtra("android",buyInsuranceBean.getAndroidPol());
+                                // drawable.stop();
+                                //parentlinear.setBackgroundColor(context.getColor(R.color.white));
 
+                               // imageView.setVisibility(View.GONE);
+                               // gridLayout.setVisibility(View.VISIBLE);
+
+                               // btn2.setVisibility(View.VISIBLE);
                                 context.startActivity(i);
+//                                imageView.setVisibility(View.GONE);
+//                                t0.setVisibility(View.VISIBLE);
+//                                t.setVisibility(View.VISIBLE);
+//                                gridLayout.setVisibility(View.VISIBLE);
+//                                btn2.setVisibility(View.VISIBLE);
                             }
-                        },1000);
+                        },0);
 
                    /* }
                     else {
@@ -850,7 +881,19 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
             }
             addBtn2();
 
+//            if(imageView.getParent() != null) {
+//                ((ViewGroup)imageView.getParent()).removeView(imageView);
+//                imageView=generateImageView();
+//                imageView.setVisibility(View.GONE);
+//            }
+//            addImageView();
+
         }
+
+//        private void addImageView() {
+//            parentlinear.addView(imageView);
+//        }
+
 
         private void addBtn2() {
             parentlinear.addView(btn2);
@@ -1175,13 +1218,27 @@ public class SelfQuoteAdapter extends RecyclerView.Adapter<SelfQuoteAdapter.View
         }
 
         private LinearLayout generateL5() {
-            LinearLayout l5=new LinearLayout(context);
-            l5.setLayoutParams(new ViewGroup.LayoutParams(
+                LinearLayout l5=new LinearLayout(context);
+                l5.setLayoutParams(new ViewGroup.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT));
             l5.setPadding(20,20,20,20);
             l5.setOrientation(LinearLayout.VERTICAL);
             return l5;
+        }
+        private ImageView generateImageView() {
+            ImageView viewImage=new ImageView(context);
+            viewImage.setLayoutParams(new ViewGroup.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT));
+            viewImage.setPadding(250,100,100,100);
+            String uri = "@drawable/loading";  // where myresource (without the extension) is the file
+
+            int imageResource = context.getResources().getIdentifier(uri, null, context.getPackageName());
+            Drawable res = context.getResources().getDrawable(imageResource);
+            viewImage.setImageDrawable(res);
+            viewImage.setVisibility(View.GONE);
+            return viewImage;
         }
 
         private LinearLayout generateReplacer() {

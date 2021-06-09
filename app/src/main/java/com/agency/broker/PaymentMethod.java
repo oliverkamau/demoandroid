@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -16,7 +17,9 @@ import android.widget.AutoCompleteTextView;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.GridLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -69,14 +72,19 @@ public class PaymentMethod extends AppCompatActivity {
     TextInputEditText inputTLayout1;
     TextInputEditText inputTLayout;
     BuyInsuranceBean buyInsuranceBean;
+    ImageView imageView;
+    AnimationDrawable drawable;
+    RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_method);
+        relativeLayout=findViewById(R.id.parentrelative);
+        relativeLayout.setBackgroundColor(getColor(R.color.white));
+
         autoCompleteTextView = findViewById(R.id.payopt);
         textInputLayout = findViewById(R.id.paymentopt);
-
         Intent i = getIntent();
 
         premium = i.getStringExtra("premium");
@@ -115,6 +123,10 @@ public class PaymentMethod extends AppCompatActivity {
         autoCompleteTextView.setText(arrayAdapter.getItem(0), false);
         autoCompleteTextView.setAdapter(arrayAdapter);
         linearLayout = findViewById(R.id.linearpay);
+        imageView=findViewById(R.id.imageView);
+        drawable=(AnimationDrawable)imageView.getDrawable();
+        imageView.setVisibility(View.GONE);
+        linearLayout.setVisibility(View.VISIBLE);
         SharedPreferences sharedPreferences = getSharedPreferences("insurance", Context.MODE_PRIVATE);
         phone = sharedPreferences.getString("phone", "phone");
         getMpesaLayout();
@@ -284,6 +296,10 @@ public class PaymentMethod extends AppCompatActivity {
         buttonP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                relativeLayout.setBackgroundColor(getColor(R.color.whiteSmoke));
+                linearLayout.setVisibility(View.GONE);
+                imageView.setVisibility(View.VISIBLE);
+                drawable.start();
                 //SharedPreferences sharedPreferences = getSharedPreferences("insurance", Context.MODE_PRIVATE);
                // String token = sharedPreferences.getString("token", "token");
                 Long clid = sharedPreferences.getLong("client", 0);
@@ -299,19 +315,30 @@ public class PaymentMethod extends AppCompatActivity {
 
                 //token = "Bearer " + token;
                 Call<ResponseBean> mpesaResponse = ApiClient.getPolicyService()
-                        .mpesaCall(mpesaCall);
+                        .mpesaCall();
                 mpesaResponse.enqueue(new Callback<ResponseBean>() {
                                           @Override
                                           public void onResponse(@NotNull Call<ResponseBean> call, @NotNull Response<ResponseBean> response) {
                                               if (response.isSuccessful()) {
+
                                                  underwritePolicy(buyInsuranceBean);
+
                                               } else {
+                                                  relativeLayout.setBackgroundColor(getColor(R.color.white));
+                                                  linearLayout.setVisibility(View.VISIBLE);
+                                                  imageView.setVisibility(View.GONE);
+                                                  drawable.stop();
                                                   StyleableToast.makeText(PaymentMethod.this,"Policy payment Failed !",R.style.myCommontoast).show();
                                               }
                                           }
 
                                           @Override
                                           public void onFailure(Call<ResponseBean> call, Throwable t) {
+
+                                              relativeLayout.setBackgroundColor(getColor(R.color.white));
+                                              linearLayout.setVisibility(View.VISIBLE);
+                                              imageView.setVisibility(View.GONE);
+                                              drawable.stop();
                                               StyleableToast.makeText(PaymentMethod.this,"Policy payment Failed !",R.style.myCommontoast).show();
 
                                           }
@@ -335,22 +362,32 @@ public class PaymentMethod extends AppCompatActivity {
                 @Override
                 public void onResponse(@NotNull Call<ResponseBean> call, @NotNull Response<ResponseBean> response) {
                     if (response.isSuccessful()) {
-
+//                        imageView.setVisibility(View.GONE);
+//                        linearLayout.setVisibility(View.VISIBLE);
+//                        relativeLayout.setBackgroundColor(getColor(R.color.white));
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
                                 Intent i = new Intent(PaymentMethod.this, Policies.class);
                                 startActivity(i);
                             }
-                        }, 100);
+                        }, 0);
 
                     } else {
+                        drawable.stop();
+                        imageView.setVisibility(View.GONE);
+                        linearLayout.setVisibility(View.VISIBLE);
+                        relativeLayout.setBackgroundColor(getColor(R.color.white));
                         StyleableToast.makeText(PaymentMethod.this, "Policy processing failed contact the Agency!", R.style.myCommontoast).show();
                     }
                 }
 
                 @Override
                 public void onFailure(Call<ResponseBean> call, Throwable t) {
+                    drawable.stop();
+                    imageView.setVisibility(View.GONE);
+                    linearLayout.setVisibility(View.VISIBLE);
+                    relativeLayout.setBackgroundColor(getColor(R.color.white));
                     StyleableToast.makeText(PaymentMethod.this, "Policy processing failed contact the Agency", R.style.myCommontoast).show();
 
                 }

@@ -41,5 +41,5 @@ public interface PolicyService {
     Call<List<SelfQuoteDetailsBean>> selfquotedetails(@Header("Authorization") String header,@Path("code") Long code);
 
     @POST("createTransaction")
-    Call<ResponseBean> mpesaCall(@Body MpesaCall mpesaCall);
+    Call<ResponseBean> mpesaCall();
 }
